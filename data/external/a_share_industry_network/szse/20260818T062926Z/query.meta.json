@@ -1,0 +1,9 @@
+{
+  "fetched_at_utc": "2026-08-18T06:29:26.772080+00:00",
+  "source": "Shenzhen Stock Exchange official A-share list",
+  "request_url": "https://www.szse.cn/api/report/ShowReport/data?SHOWTYPE=JSON&CATALOGID=1110&TABKEY=tab1&txtDMorJC=002714",
+  "http_status": 200,
+  "response_sha256": "d61ffee6e1bc77e83f4f274be2d55b10601dd76fba623f064c65c0e282d6e5fa",
+  "symbol": "002714",
+  "expected_name": "牧原股份"
+}

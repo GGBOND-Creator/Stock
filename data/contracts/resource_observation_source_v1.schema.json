@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "resource_observation_source_v1.schema.json",
+  "title": "Resource Observation Source Contract v1",
+  "description": "Source registry and archived resource observations. A candidate source never creates an observation until its downloaded rows, time semantics, unit and geography are checked.",
+  "type": "object",
+  "required": ["source_registry.csv", "source_observations.csv", "admission_rules"],
+  "properties": {
+    "source_registry.csv": {"description": "Candidate or imported source metadata."},
+    "source_observations.csv": {"description": "Normalized observations with source_record_id, observation_time and available_time."},
+    "admission_rules": {
+      "type": "object",
+      "properties": {
+        "candidate_source": {"description": "Catalogued only; cannot enter the default resource snapshot."},
+        "imported": {"description": "Archived rows have a source hash and pass unit/geography/time validation."},
+        "verified": {"description": "Imported rows have passed an independent review or source cross-check."},
+        "missing_quantity": {"description": "Missing quantity is unknown, never zero."}
+      }
+    }
+  }
+}

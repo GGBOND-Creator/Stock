@@ -1,0 +1,19 @@
+{
+  "schema_version": "counterparty_relation_eligibility_audit_v1",
+  "generated_at_utc": "2026-08-18T07:49:25.211982+00:00",
+  "as_of": "2026-08-18T08:00:00+00:00",
+  "input": {
+    "path": "data/industry_network/a_share/counterparty_concentrations.csv",
+    "sha256": "296636fba000f838eaa97d8d1e3af3a44bc4996a589799e18317c7153042d7bf",
+    "rows": 2
+  },
+  "audited_rows_available_at_as_of": 2,
+  "eligible_rows": 0,
+  "relation_rows_created": 0,
+  "existing_company_relation_rows": 2,
+  "reason_counts": {
+    "anonymous_aggregate_only": 2
+  },
+  "writes_network_tables": false,
+  "required_next_evidence": "verbatim legal counterparty name, independent company identity, and reviewed available_time"
+}

@@ -1,0 +1,7 @@
+﻿signal_type,display_name,description,default_unit,polarity,display_color,display_channel,default_half_life_days,evidence_status,quality_status
+production.activity,生产活动,生产或经营活动状态的展示通道；须由证据事件填充。,signal_unit,signed,#2E7D32,glow,,controlled_label_only,empty_until_evidence
+supply.constraint,供给约束,供给受限或缓解的展示通道；不能由行业分类自动推出。,signal_unit,signed,#EF6C00,halo,,controlled_label_only,empty_until_evidence
+demand.change,需求变化,需求变化的展示通道；事件强度须有来源或明确代理标记。,signal_unit,signed,#1565C0,pulse,,controlled_label_only,empty_until_evidence
+capital.pressure,资本压力,资金或融资压力的展示通道；不得把成交量自动解释为具体资金主体。,signal_unit,signed,#8E24AA,flow,,controlled_label_only,empty_until_evidence
+risk.warning,风险警示,风险事件展示通道；不是投资建议或风险概率。,signal_unit,nonnegative,#C62828,halo,,controlled_label_only,empty_until_evidence
+lifecycle.change,生命周期变化,上市、暂停、风险警示、退市等生命周期事件展示通道。,signal_unit,signed,#455A64,outline,,controlled_label_only,empty_until_evidence

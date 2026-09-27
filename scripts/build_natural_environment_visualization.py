@@ -1,0 +1,458 @@
+from __future__ import annotations
+
+import csv
+import html
+import json
+from pathlib import Path
+
+
+PROJECT_ROOT = Path(__file__).resolve().parents[1]
+DATA_PATH = PROJECT_ROOT / "data" / "natural_environment" / "global_environment_units.csv"
+OUTPUT_PATH = PROJECT_ROOT / "reports" / "natural_environment_map.html"
+
+
+def load_rows() -> list[dict[str, str]]:
+    with DATA_PATH.open("r", encoding="utf-8-sig", newline="") as file:
+        return list(csv.DictReader(file))
+
+
+def build_html(rows: list[dict[str, str]]) -> str:
+    data_json = json.dumps(rows, ensure_ascii=False, indent=2)
+    title = "全球自然环境模型可视化"
+    escaped_title = html.escape(title)
+    return f"""<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{escaped_title}</title>
+  <style>
+    :root {{
+      color-scheme: light dark;
+      --bg: #f7f3ea;
+      --fg: #202124;
+      --muted: #667085;
+      --panel: #fffaf0;
+      --border: #d8d2c4;
+      --grid: #c9d6d3;
+      --land: #e4dcc9;
+      --ocean: #dfecef;
+      --accent: #266f6d;
+      --accent-2: #9b5a2e;
+      --accent-3: #5a5f9f;
+      --high: #a6453d;
+      --medium: #a87c2a;
+      --low: #2f7d59;
+    }}
+    @media (prefers-color-scheme: dark) {{
+      :root {{
+        --bg: #151816;
+        --fg: #ece7dc;
+        --muted: #b8b0a2;
+        --panel: #20241f;
+        --border: #3a4038;
+        --grid: #34423f;
+        --land: #35382d;
+        --ocean: #162326;
+        --accent: #71b7aa;
+        --accent-2: #d19a66;
+        --accent-3: #a7a8df;
+        --high: #df8279;
+        --medium: #d2aa4e;
+        --low: #7bc79d;
+      }}
+    }}
+    * {{ box-sizing: border-box; }}
+    body {{
+      margin: 0;
+      font-family: "Microsoft YaHei", "Segoe UI", system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--fg);
+    }}
+    main {{
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 24px 0 36px;
+    }}
+    header {{
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: flex-end;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }}
+    h1 {{
+      margin: 0;
+      font-size: 26px;
+      font-weight: 500;
+      letter-spacing: 0;
+    }}
+    .subtitle {{
+      margin: 6px 0 0;
+      color: var(--muted);
+      max-width: 760px;
+      line-height: 1.6;
+    }}
+    .controls {{
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: end;
+      margin: 14px 0 18px;
+    }}
+    label {{
+      display: grid;
+      gap: 5px;
+      color: var(--muted);
+      font-size: 13px;
+    }}
+    select {{
+      min-width: 180px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 8px 10px;
+      color: var(--fg);
+      background: var(--panel);
+      font: inherit;
+    }}
+    .dashboard {{
+      display: grid;
+      grid-template-columns: minmax(0, 1.55fr) minmax(260px, 0.75fr);
+      gap: 18px;
+      align-items: start;
+    }}
+    .map-wrap, .detail, .table-wrap {{
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }}
+    .map-wrap {{
+      padding: 12px;
+    }}
+    svg {{
+      width: 100%;
+      height: auto;
+      display: block;
+    }}
+    .map-bg {{
+      fill: var(--ocean);
+    }}
+    .band {{
+      fill: var(--land);
+      opacity: 0.52;
+    }}
+    .grid-line {{
+      stroke: var(--grid);
+      stroke-width: 1;
+      fill: none;
+    }}
+    .point {{
+      cursor: pointer;
+      stroke: var(--panel);
+      stroke-width: 1.5;
+    }}
+    .point:focus {{
+      outline: none;
+      stroke: var(--fg);
+      stroke-width: 3;
+    }}
+    .point.high {{ fill: var(--high); }}
+    .point.medium {{ fill: var(--medium); }}
+    .point.low {{ fill: var(--low); }}
+    .point.unknown {{ fill: var(--accent-3); }}
+    .label {{
+      font-size: 12px;
+      fill: var(--fg);
+      paint-order: stroke;
+      stroke: var(--panel);
+      stroke-width: 3px;
+      stroke-linejoin: round;
+    }}
+    .detail {{
+      padding: 16px;
+    }}
+    .detail h2 {{
+      margin: 0 0 8px;
+      font-size: 18px;
+      font-weight: 500;
+    }}
+    .meta {{
+      color: var(--muted);
+      line-height: 1.55;
+      margin-bottom: 12px;
+    }}
+    .kv {{
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 8px 10px;
+      font-size: 14px;
+    }}
+    .kv span:nth-child(odd) {{
+      color: var(--muted);
+    }}
+    .legend {{
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      margin-top: 10px;
+      font-size: 13px;
+    }}
+    .legend-item {{
+      display: inline-flex;
+      gap: 6px;
+      align-items: center;
+    }}
+    .swatch {{
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+      display: inline-block;
+    }}
+    .swatch.high {{ background: var(--high); }}
+    .swatch.medium {{ background: var(--medium); }}
+    .swatch.low {{ background: var(--low); }}
+    .table-wrap {{
+      margin-top: 18px;
+      overflow-x: auto;
+    }}
+    table {{
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 860px;
+      font-size: 14px;
+    }}
+    th, td {{
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+      vertical-align: top;
+    }}
+    th {{
+      color: var(--muted);
+      font-weight: 500;
+      white-space: nowrap;
+    }}
+    tr:hover {{
+      background: color-mix(in srgb, var(--accent) 9%, transparent);
+    }}
+    .pill {{
+      display: inline-block;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 2px 8px;
+      white-space: nowrap;
+    }}
+    @media (max-width: 820px) {{
+      main {{ width: min(100% - 20px, 1180px); padding-top: 16px; }}
+      h1 {{ font-size: 22px; }}
+      .dashboard {{ grid-template-columns: 1fr; }}
+      select {{ min-width: min(100%, 220px); }}
+      .kv {{ grid-template-columns: 86px 1fr; }}
+    }}
+  </style>
+</head>
+<body>
+  <main>
+    <header>
+      <div>
+        <h1>全球自然环境模型可视化</h1>
+        <p class="subtitle">第一版使用低维种子数据观察资源、产能、气候、水压力和物流约束的全球分布；当前数据状态为结构样例，不代表正式事实库。</p>
+      </div>
+    </header>
+
+    <section class="controls" aria-label="筛选条件">
+      <label>自然环境维度
+        <select id="dimensionFilter"></select>
+      </label>
+      <label>约束等级
+        <select id="constraintFilter"></select>
+      </label>
+      <label>区域
+        <select id="regionFilter"></select>
+      </label>
+    </section>
+
+    <section class="dashboard">
+      <div class="map-wrap">
+        <svg id="map" viewBox="0 0 960 500" role="img" aria-label="全球自然环境单元经纬度分布图"></svg>
+        <div class="legend">
+          <span class="legend-item"><span class="swatch high"></span>高约束</span>
+          <span class="legend-item"><span class="swatch medium"></span>中约束</span>
+          <span class="legend-item"><span class="swatch low"></span>低约束</span>
+        </div>
+      </div>
+      <aside class="detail" aria-live="polite">
+        <h2 id="detailTitle">选择一个自然环境单元</h2>
+        <div id="detailMeta" class="meta">当前显示全部种子记录。</div>
+        <div id="detailKv" class="kv"></div>
+      </aside>
+    </section>
+
+    <section class="table-wrap" aria-label="自然环境单元表">
+      <table>
+        <thead>
+          <tr>
+            <th>单元</th>
+            <th>区域</th>
+            <th>维度</th>
+            <th>主要资源</th>
+            <th>角色</th>
+            <th>约束</th>
+            <th>水压力</th>
+            <th>物流</th>
+            <th>状态</th>
+          </tr>
+        </thead>
+        <tbody id="rows"></tbody>
+      </table>
+    </section>
+  </main>
+
+  <script>
+    const data = {data_json};
+    const dimensions = ["全部", ...Array.from(new Set(data.map(d => d.natural_dimension))).sort()];
+    const constraints = ["全部", "high", "medium", "low"];
+    const regions = ["全部", ...Array.from(new Set(data.map(d => d.region))).sort()];
+
+    const dimensionFilter = document.getElementById("dimensionFilter");
+    const constraintFilter = document.getElementById("constraintFilter");
+    const regionFilter = document.getElementById("regionFilter");
+    const map = document.getElementById("map");
+    const rowsEl = document.getElementById("rows");
+    const detailTitle = document.getElementById("detailTitle");
+    const detailMeta = document.getElementById("detailMeta");
+    const detailKv = document.getElementById("detailKv");
+
+    function fillSelect(select, values) {{
+      select.innerHTML = values.map(v => `<option value="${{v}}">${{v}}</option>`).join("");
+    }}
+
+    fillSelect(dimensionFilter, dimensions);
+    fillSelect(constraintFilter, constraints);
+    fillSelect(regionFilter, regions);
+
+    function project(lon, lat) {{
+      const x = (Number(lon) + 180) / 360 * 900 + 30;
+      const y = (90 - Number(lat)) / 180 * 420 + 40;
+      return [x, y];
+    }}
+
+    function cls(level) {{
+      return ["high", "medium", "low"].includes(level) ? level : "unknown";
+    }}
+
+    function filtered() {{
+      return data.filter(d => {{
+        const dimOk = dimensionFilter.value === "全部" || d.natural_dimension === dimensionFilter.value;
+        const conOk = constraintFilter.value === "全部" || d.constraint_level === constraintFilter.value;
+        const regOk = regionFilter.value === "全部" || d.region === regionFilter.value;
+        return dimOk && conOk && regOk;
+      }});
+    }}
+
+    function drawMap(items) {{
+      const grid = [];
+      for (let lon = -180; lon <= 180; lon += 60) {{
+        const [x1, y1] = project(lon, -70);
+        const [x2, y2] = project(lon, 80);
+        grid.push(`<path class="grid-line" d="M${{x1}},${{y1}} L${{x2}},${{y2}}"></path>`);
+      }}
+      for (let lat = -60; lat <= 60; lat += 30) {{
+        const [x1, y1] = project(-180, lat);
+        const [x2, y2] = project(180, lat);
+        grid.push(`<path class="grid-line" d="M${{x1}},${{y1}} L${{x2}},${{y2}}"></path>`);
+      }}
+      const bands = [
+        [30, 65, "北温带"], [-10, 25, "热带"], [-55, -20, "南温带"]
+      ].map(([lat1, lat2]) => {{
+        const [x1, y1] = project(-180, lat2);
+        const [x2, y2] = project(180, lat1);
+        return `<rect class="band" x="${{x1}}" y="${{y1}}" width="${{x2 - x1}}" height="${{y2 - y1}}"></rect>`;
+      }});
+      const points = items.map(d => {{
+        const [x, y] = project(d.lon, d.lat);
+        return `<g><circle class="point ${{cls(d.constraint_level)}}" tabindex="0" role="button" aria-label="${{d.unit_name}}" data-id="${{d.unit_id}}" cx="${{x}}" cy="${{y}}" r="8"></circle><text class="label" x="${{x + 10}}" y="${{y - 8}}">${{d.iso3}}</text></g>`;
+      }});
+      map.innerHTML = `<rect class="map-bg" x="20" y="30" width="920" height="440" rx="10"></rect>${{bands.join("")}}${{grid.join("")}}${{points.join("")}}`;
+      map.querySelectorAll(".point").forEach(point => {{
+        point.addEventListener("click", () => selectItem(point.dataset.id));
+        point.addEventListener("keydown", event => {{
+          if (event.key === "Enter" || event.key === " ") {{
+            event.preventDefault();
+            selectItem(point.dataset.id);
+          }}
+        }});
+      }});
+    }}
+
+    function selectItem(id) {{
+      const d = data.find(item => item.unit_id === id);
+      if (!d) return;
+      detailTitle.textContent = d.unit_name;
+      detailMeta.textContent = `${{d.region}} / ${{d.iso3}} / ${{d.source_status}}`;
+      const fields = [
+        ["维度", d.natural_dimension],
+        ["主要资源", d.primary_resource],
+        ["模型角色", d.resource_role],
+        ["生产代理", d.production_proxy],
+        ["储量代理", d.reserve_proxy],
+        ["约束等级", d.constraint_level],
+        ["气候区", d.climate_zone],
+        ["水压力", d.water_stress],
+        ["物流可达", d.logistics_access],
+        ["可信度", d.confidence],
+        ["备注", d.notes]
+      ];
+      detailKv.innerHTML = fields.map(([k, v]) => `<span>${{k}}</span><span>${{v}}</span>`).join("");
+    }}
+
+    function drawTable(items) {{
+      rowsEl.innerHTML = items.map(d => `
+        <tr data-id="${{d.unit_id}}">
+          <td>${{d.unit_name}}</td>
+          <td>${{d.region}}</td>
+          <td><span class="pill">${{d.natural_dimension}}</span></td>
+          <td>${{d.primary_resource}}</td>
+          <td>${{d.resource_role}}</td>
+          <td>${{d.constraint_level}}</td>
+          <td>${{d.water_stress}}</td>
+          <td>${{d.logistics_access}}</td>
+          <td>${{d.source_status}} / ${{d.confidence}}</td>
+        </tr>
+      `).join("");
+      rowsEl.querySelectorAll("tr").forEach(row => {{
+        row.addEventListener("click", () => selectItem(row.dataset.id));
+      }});
+    }}
+
+    function render() {{
+      const items = filtered();
+      drawMap(items);
+      drawTable(items);
+      detailTitle.textContent = "当前筛选结果";
+      detailMeta.textContent = `显示 ${{items.length}} / ${{data.length}} 条自然环境单元。`;
+      detailKv.innerHTML = "";
+    }}
+
+    [dimensionFilter, constraintFilter, regionFilter].forEach(control => {{
+      control.addEventListener("change", render);
+    }});
+
+    render();
+  </script>
+</body>
+</html>
+"""
+
+
+def main() -> None:
+    rows = load_rows()
+    OUTPUT_PATH.parent.mkdir(parents=True, exist_ok=True)
+    OUTPUT_PATH.write_text(build_html(rows), encoding="utf-8")
+    print(f"Wrote {OUTPUT_PATH}")
+
+
+if __name__ == "__main__":
+    main()

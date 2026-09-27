@@ -1,0 +1,9 @@
+{
+  "fetched_at_utc": "2026-08-16T14:06:37+00:00",
+  "source": "CNINFO szse_stock.json and p_sysapi1133",
+  "registry_rows": 6234,
+  "profile_symbols": [
+    "002714"
+  ],
+  "availability_policy": "available_at_local_fetch_time"
+}

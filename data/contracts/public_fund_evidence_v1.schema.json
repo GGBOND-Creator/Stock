@@ -1,0 +1,67 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "public_fund_evidence_v1.schema.json",
+  "title": "Public Fund Evidence v1",
+  "description": "Normalized public-fund product, report-index, and disclosed holding observations.",
+  "oneOf": [
+    { "$ref": "#/$defs/product" },
+    { "$ref": "#/$defs/report" },
+    { "$ref": "#/$defs/holding" }
+  ],
+  "$defs": {
+    "common": {
+      "type": "object",
+      "required": ["available_time", "availability_policy", "source", "quality_status"],
+      "properties": {
+        "available_time": { "type": "string", "format": "date-time" },
+        "availability_policy": { "type": "string", "minLength": 1 },
+        "source": { "type": "string", "minLength": 1 },
+        "quality_status": { "type": "string", "minLength": 1 }
+      }
+    },
+    "product": {
+      "allOf": [
+        { "$ref": "#/$defs/common" },
+        { "type": "object", "required": ["fund_id", "fund_code", "fund_name", "net_assets_scope", "manager_company", "custodian", "manager_names"], "properties": {
+          "fund_id": { "type": "string", "minLength": 1 },
+          "fund_code": { "type": "string", "pattern": "^[0-9]{6}$" },
+          "fund_name": { "type": "string", "minLength": 1 },
+          "net_assets_scope": { "type": "string", "minLength": 1 },
+          "manager_company": { "type": "string", "minLength": 1 },
+          "custodian": { "type": "string", "minLength": 1 },
+          "manager_names": { "type": "string", "minLength": 1 }
+        } }
+      ]
+    },
+    "report": {
+      "allOf": [
+        { "$ref": "#/$defs/common" },
+        { "type": "object", "required": ["report_id", "fund_id", "fund_code", "announcement_title", "announcement_date", "source_record_id"], "properties": {
+          "report_id": { "type": "string", "minLength": 1 },
+          "fund_id": { "type": "string", "minLength": 1 },
+          "fund_code": { "type": "string", "pattern": "^[0-9]{6}$" },
+          "announcement_title": { "type": "string", "minLength": 1 },
+          "announcement_date": { "type": "string", "format": "date" },
+          "report_period_end": { "type": ["string", "null"] },
+          "source_record_id": { "type": "string", "minLength": 1 }
+        } }
+      ]
+    },
+    "holding": {
+      "allOf": [
+        { "$ref": "#/$defs/common" },
+        { "type": "object", "required": ["holding_id", "fund_id", "fund_code", "report_period_end", "instrument_id", "portfolio_weight", "market_value", "market_value_unit", "holding_scope"], "properties": {
+          "holding_id": { "type": "string", "minLength": 1 },
+          "fund_id": { "type": "string", "minLength": 1 },
+          "fund_code": { "type": "string", "pattern": "^[0-9]{6}$" },
+          "report_period_end": { "type": "string", "format": "date" },
+          "instrument_id": { "type": "string", "minLength": 1 },
+          "portfolio_weight": { "type": "number", "minimum": 0, "maximum": 1 },
+          "market_value": { "type": "number", "minimum": 0 },
+          "market_value_unit": { "type": "string", "minLength": 1 },
+          "holding_scope": { "type": "string", "minLength": 1 }
+        } }
+      ]
+    }
+  }
+}

@@ -1,0 +1,194 @@
+{
+  "schema_version": "stock_motion_event_v2",
+  "created_at_utc": "2026-08-17T02:47:05+00:00",
+  "input_schema": "ohlcv_daily_v1+a_share_industry_network_v2",
+  "input_file": "data\\raw\\002714.SZ.csv",
+  "input_sha256": "31cfb8f99fb13a632a9969719b98e400dfceb578265e91a1e8edeb599b910151",
+  "source_metadata_file": "data\\raw\\002714.SZ.csv.meta.json",
+  "additional_input_files": [
+    "C:\\stock\\data\\industry_network\\a_share"
+  ],
+  "output_file": "data\\processed\\motion\\002714.SZ.motion.csv",
+  "symbol": "002714.SZ",
+  "source": "AkShare stock_zh_a_hist (Eastmoney), cross-checked with BaoStock",
+  "market": "A-share",
+  "adjustment": "qfq",
+  "volume_unit": "lots",
+  "provenance_id": "d8dfe80ec636",
+  "availability_policy": "multiple_policies",
+  "availability_policies": [
+    "available_after_human_review",
+    "available_after_session_close",
+    "available_after_source_ingestion"
+  ],
+  "causality_policy": "current_and_past_rows_only",
+  "rows": 10028,
+  "event_dates": 635,
+  "date_start": "2024-01-02",
+  "date_end": "2026-08-16T14:06:37+00:00",
+  "channels": [
+    {
+      "channel": "market.activity.log_volume_change_1d",
+      "unit": "log_ratio",
+      "evidence_kind": "derived",
+      "method": "ln(1+volume_t)-ln(1+volume_t-1)"
+    },
+    {
+      "channel": "market.activity.volume",
+      "unit": "source_volume_unit",
+      "evidence_kind": "observation",
+      "method": "source_value"
+    },
+    {
+      "channel": "market.activity.volume_ratio_20",
+      "unit": "ratio",
+      "evidence_kind": "derived",
+      "method": "volume_t/mean(volume_t-19:t)"
+    },
+    {
+      "channel": "market.motion.gap_return",
+      "unit": "ratio",
+      "evidence_kind": "derived",
+      "method": "open_t/close_t-1-1"
+    },
+    {
+      "channel": "market.motion.intraday_return",
+      "unit": "ratio",
+      "evidence_kind": "derived",
+      "method": "close_t/open_t-1"
+    },
+    {
+      "channel": "market.motion.log_return_1d",
+      "unit": "log_ratio",
+      "evidence_kind": "derived",
+      "method": "ln(close_t)-ln(close_t-1)"
+    },
+    {
+      "channel": "market.motion.range_ratio",
+      "unit": "ratio",
+      "evidence_kind": "derived",
+      "method": "(high_t-low_t)/close_(t-1)"
+    },
+    {
+      "channel": "market.motion.return_1d",
+      "unit": "ratio",
+      "evidence_kind": "derived",
+      "method": "close_t/close_t-1-1"
+    },
+    {
+      "channel": "market.price.close",
+      "unit": "source_currency_per_share",
+      "evidence_kind": "observation",
+      "method": "source_value"
+    },
+    {
+      "channel": "market.price.high",
+      "unit": "source_currency_per_share",
+      "evidence_kind": "observation",
+      "method": "source_value"
+    },
+    {
+      "channel": "market.price.low",
+      "unit": "source_currency_per_share",
+      "evidence_kind": "observation",
+      "method": "source_value"
+    },
+    {
+      "channel": "market.price.open",
+      "unit": "source_currency_per_share",
+      "evidence_kind": "observation",
+      "method": "source_value"
+    },
+    {
+      "channel": "market.relative.price_zscore_60",
+      "unit": "standard_deviation",
+      "evidence_kind": "derived",
+      "method": "zscore(ln(close),t-59:t)"
+    },
+    {
+      "channel": "market.risk.volatility_20",
+      "unit": "daily_return_std",
+      "evidence_kind": "derived",
+      "method": "std(return_1d,t-19:t)"
+    },
+    {
+      "channel": "market.state.close_location",
+      "unit": "ratio_0_1",
+      "evidence_kind": "derived",
+      "method": "(close_t-low_t)/(high_t-low_t)"
+    },
+    {
+      "channel": "production.activity.product_role.producer",
+      "unit": "binary_indicator",
+      "evidence_kind": "observation",
+      "method": "human_approved_verbatim_main_business_mapping"
+    },
+    {
+      "channel": "production.activity.product_role.seller",
+      "unit": "binary_indicator",
+      "evidence_kind": "observation",
+      "method": "human_approved_verbatim_main_business_mapping"
+    },
+    {
+      "channel": "proxy.directional_activity_pressure",
+      "unit": "proxy_index",
+      "evidence_kind": "proxy",
+      "method": "sign(return_1d)*ln(1+volume_ratio_20)"
+    },
+    {
+      "channel": "proxy.production.network.customer.related_party_share",
+      "unit": "ratio_of_annual_total",
+      "evidence_kind": "proxy",
+      "method": "anonymous_annual_report_concentration_as_network_dependency_proxy"
+    },
+    {
+      "channel": "proxy.production.network.customer.top_five_share",
+      "unit": "ratio_of_annual_total",
+      "evidence_kind": "proxy",
+      "method": "anonymous_annual_report_concentration_as_network_dependency_proxy"
+    },
+    {
+      "channel": "proxy.production.network.supplier.related_party_share",
+      "unit": "ratio_of_annual_total",
+      "evidence_kind": "proxy",
+      "method": "anonymous_annual_report_concentration_as_network_dependency_proxy"
+    },
+    {
+      "channel": "proxy.production.network.supplier.top_five_share",
+      "unit": "ratio_of_annual_total",
+      "evidence_kind": "proxy",
+      "method": "anonymous_annual_report_concentration_as_network_dependency_proxy"
+    }
+  ],
+  "unresolved_latent_channels": [
+    "production.capacity_state",
+    "production.unit_economics_state",
+    "claim.distributable_value_anchor",
+    "expectation.revision_state",
+    "sentiment.state",
+    "capital.net_flow_state",
+    "constraint.regime_state"
+  ],
+  "warnings": [
+    "OHLCV cannot identify production value, expectations, sentiment, or net capital flow by itself.",
+    "Proxy channels are hypotheses for testing, not direct observations of their possible causes.",
+    "A reviewed business description confirms a disclosed activity role, not production volume, capacity, profitability, or a fixed valuation range."
+  ],
+  "market_event_rows": 10022,
+  "network_event_rows": 6,
+  "network_channels": [
+    "production.activity.product_role.producer",
+    "production.activity.product_role.seller",
+    "proxy.production.network.customer.related_party_share",
+    "proxy.production.network.customer.top_five_share",
+    "proxy.production.network.supplier.related_party_share",
+    "proxy.production.network.supplier.top_five_share"
+  ],
+  "network_evidence_policy": "approved product mappings are observations; anonymous counterparty concentration is proxy only",
+  "network_time_semantics": {
+    "approved_activity_event_time": "source observation time because the business effective date is not disclosed",
+    "approved_activity_available_time": "human review completion time",
+    "annual_report_event_time": "report period end",
+    "annual_report_available_time": "verified local first-ingestion time"
+  }
+}

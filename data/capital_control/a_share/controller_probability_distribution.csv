@@ -1,0 +1,1 @@
+schema_version,distribution_id,flow_event_id,instrument_id,event_time,available_time,controller_id,controller_class,control_role,probability,estimated_signed_amount,amount_unit,probability_status,probability_method,evidence_kind,evidence_ids,source,quality_status

@@ -1,0 +1,124 @@
+{
+  "fund_code": "110022",
+  "fund_name": "易方达消费行业股票",
+  "full_name": "易方达消费行业股票型证券投资基金",
+  "report_period_end": "2026-06-30",
+  "report_id": "AN202607211827164035",
+  "index_title": "易方达消费行业股票型证券投资基金2026年第2季度报告",
+  "index_announcement_date": "2026-07-21",
+  "index_available_time": "2026-07-21T23:59:59+08:00",
+  "downloaded_at": "2026-08-17T11:31:11+08:00",
+  "mirror_url": "https://pdf.dfcfw.com/pdf/H2_AN202607211827164035_1.pdf",
+  "pdf_file": "data\\external\\public_fund\\report_pdfs\\110022\\2026-06-30\\110022_2026-06-30_AN202607211827164035.pdf",
+  "pdf_sha256": "63d539815cce74b618c798956c717c674be91b2c5f823e9befc65092e21a9ce4",
+  "page_count": 12,
+  "text_character_count": 7992,
+  "identity_name_match": true,
+  "fund_code_match": true,
+  "report_period_match": true,
+  "expected_holding_rows": 10,
+  "matched_holding_rows": 10,
+  "holding_evidence_pages": [
+    8,
+    9,
+    10
+  ],
+  "holding_checks": [
+    {
+      "instrument_id": "600519.SH",
+      "security_name": "贵州茅台",
+      "matched_pages": [
+        9
+      ]
+    },
+    {
+      "instrument_id": "000333.SZ",
+      "security_name": "美的集团",
+      "matched_pages": [
+        9
+      ]
+    },
+    {
+      "instrument_id": "600809.SH",
+      "security_name": "山西汾酒",
+      "matched_pages": [
+        9
+      ]
+    },
+    {
+      "instrument_id": "002594.SZ",
+      "security_name": "比亚迪",
+      "matched_pages": [
+        9
+      ]
+    },
+    {
+      "instrument_id": "600660.SH",
+      "security_name": "福耀玻璃",
+      "matched_pages": [
+        9
+      ]
+    },
+    {
+      "instrument_id": "603129.SH",
+      "security_name": "春风动力",
+      "matched_pages": [
+        9,
+        10
+      ]
+    },
+    {
+      "instrument_id": "601058.SH",
+      "security_name": "赛轮轮胎",
+      "matched_pages": [
+        9
+      ]
+    },
+    {
+      "instrument_id": "000568.SZ",
+      "security_name": "泸州老窖",
+      "matched_pages": [
+        9
+      ]
+    },
+    {
+      "instrument_id": "000596.SZ",
+      "security_name": "古井贡酒",
+      "matched_pages": [
+        8,
+        9
+      ]
+    },
+    {
+      "instrument_id": "603288.SH",
+      "security_name": "海天味业",
+      "matched_pages": [
+        9
+      ]
+    }
+  ],
+  "share_class_table_detected": false,
+  "six_digit_codes_in_document": [
+    "000333",
+    "000568",
+    "000596",
+    "002594",
+    "110022",
+    "113655",
+    "113704",
+    "127045",
+    "127046",
+    "600519",
+    "600660",
+    "600809",
+    "601058",
+    "603129",
+    "603288"
+  ],
+  "quality_status": "pdf_content_verified_against_index_and_disclosed_holdings",
+  "known_limits": [
+    "PDF is archived from an Eastmoney mirror, not yet from the fund manager's official host",
+    "announcement date is supplied by the report index and may not appear inside the PDF",
+    "text matching verifies document identity and holdings presence, not every numeric table cell"
+  ]
+}

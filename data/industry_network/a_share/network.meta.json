@@ -1,0 +1,274 @@
+{
+  "schema_version": "a_share_industry_network_v2",
+  "created_at_utc": "2026-08-18T07:57:24+00:00",
+  "source_description": "A-share network plus counterparty-filing identity and control corroboration",
+  "tables": {
+    "companies.csv": {
+      "rows": 5874,
+      "sha256": "391911dc7286d6b17cc05789d96d3a8bc0b14ce781a2dd29c5fe22ebb8d087ba",
+      "columns": [
+        "company_id",
+        "company_name",
+        "identity_basis",
+        "issuer_id",
+        "issuer_id_source",
+        "registered_region",
+        "source",
+        "source_status",
+        "observed_at"
+      ]
+    },
+    "listings.csv": {
+      "rows": 5884,
+      "sha256": "011258b5cdd690cb303bc2d9a71ccf8d52e9f9b47b4964d6ef797e7d0a9f1386",
+      "columns": [
+        "listing_id",
+        "company_id",
+        "symbol",
+        "exchange",
+        "board",
+        "security_type",
+        "currency",
+        "initial_status",
+        "listing_date",
+        "delisting_date",
+        "total_market_value",
+        "free_float_market_value",
+        "source",
+        "source_status",
+        "observed_at"
+      ]
+    },
+    "industries.csv": {
+      "rows": 83,
+      "sha256": "ba92db01bdf1fd392e5f5ca6fad630b9ac9c93910da62aa97e483afa80cada12",
+      "columns": [
+        "industry_id",
+        "industry_code",
+        "industry_name",
+        "classification_system",
+        "source",
+        "source_status",
+        "observed_at"
+      ]
+    },
+    "industry_memberships.csv": {
+      "rows": 5206,
+      "sha256": "3d66a577b09908286234ec068f94dddbbe48a3e0930f0cc5c8b075a93cb97fa5",
+      "columns": [
+        "membership_id",
+        "company_id",
+        "industry_id",
+        "valid_from",
+        "valid_to",
+        "available_time",
+        "source",
+        "evidence_kind",
+        "confidence"
+      ]
+    },
+    "company_relations.csv": {
+      "rows": 2,
+      "sha256": "d4f7ce25e3220743498d8b29eaa677c8771292f4c84e03f620f8bed89602e822",
+      "columns": [
+        "relation_id",
+        "source_company_id",
+        "target_company_id",
+        "relation_type",
+        "product_or_service",
+        "weight",
+        "weight_unit",
+        "valid_from",
+        "valid_to",
+        "available_time",
+        "source",
+        "evidence_kind",
+        "confidence"
+      ]
+    },
+    "business_activities.csv": {
+      "rows": 2,
+      "sha256": "008ec259fa8a9f760df44c4daaf220ae12edac49c015929e7f0d1d70fb3caa0f",
+      "columns": [
+        "activity_id",
+        "company_id",
+        "activity_type",
+        "activity_text",
+        "product_or_service",
+        "role",
+        "valid_from",
+        "valid_to",
+        "available_time",
+        "source",
+        "source_record_id",
+        "evidence_kind",
+        "extraction_method",
+        "confidence",
+        "source_status"
+      ]
+    },
+    "products.csv": {
+      "rows": 1,
+      "sha256": "613d01dd3d83451918310f9ccc5fbbcc10c1d3edf4295d7bbee9e55354cf20f0",
+      "columns": [
+        "product_id",
+        "canonical_name",
+        "parent_product_id",
+        "product_kind",
+        "description",
+        "source",
+        "source_status",
+        "observed_at"
+      ]
+    },
+    "activity_product_candidates.csv": {
+      "rows": 2,
+      "sha256": "2fcdff77fc4bf6044240c6022b9dba8c234186145502ab57a89244f07774dc9a",
+      "columns": [
+        "mapping_id",
+        "activity_id",
+        "company_id",
+        "product_id",
+        "role",
+        "evidence_quote",
+        "available_time",
+        "mapping_method",
+        "review_status",
+        "reviewer",
+        "reviewed_at",
+        "confidence",
+        "notes"
+      ]
+    },
+    "counterparty_concentrations.csv": {
+      "rows": 2,
+      "sha256": "296636fba000f838eaa97d8d1e3af3a44bc4996a589799e18317c7153042d7bf",
+      "columns": [
+        "concentration_id",
+        "company_id",
+        "report_period_start",
+        "report_period_end",
+        "counterparty_side",
+        "scope",
+        "aggregate_amount",
+        "currency",
+        "share_of_total",
+        "related_party_share_of_total",
+        "names_disclosed",
+        "announcement_time",
+        "available_time",
+        "source",
+        "source_record_id",
+        "evidence_pages",
+        "evidence_quote",
+        "extraction_method",
+        "review_status",
+        "confidence",
+        "source_status"
+      ]
+    },
+    "lifecycle_events.csv": {
+      "rows": 11766,
+      "sha256": "f1c8ca1be01a2dbf8ee27d378da43ed503f98dca6cf64fb5f03ddcb5f240bb1b",
+      "columns": [
+        "event_id",
+        "listing_id",
+        "company_id",
+        "event_type",
+        "event_time",
+        "available_time",
+        "effective_time",
+        "industry_id",
+        "fundraising_amount",
+        "free_float_market_value",
+        "reason",
+        "source",
+        "evidence_kind",
+        "availability_quality",
+        "source_status"
+      ]
+    },
+    "named_counterparty_relation_evidence.csv": {
+      "rows": 2,
+      "sha256": "ca64636e7f7bfa72410b6bec960cfc0ec24929f47d3673c76ce5ef48475c1ee8",
+      "columns": [
+        "evidence_id",
+        "relation_id",
+        "reporting_company_id",
+        "reporting_symbol",
+        "reporting_legal_name",
+        "counterparty_company_id",
+        "counterparty_symbol",
+        "counterparty_legal_name",
+        "counterparty_name_in_filing",
+        "report_period_start",
+        "report_period_end",
+        "transaction_direction",
+        "relation_type",
+        "product_or_service",
+        "transaction_amount",
+        "currency",
+        "announcement_time",
+        "source_available_time",
+        "identity_announcement_time",
+        "identity_available_time",
+        "relation_available_time",
+        "source",
+        "source_record_id",
+        "source_url",
+        "evidence_page",
+        "evidence_quote",
+        "reporting_identity_evidence_page",
+        "reporting_identity_evidence_quote",
+        "identity_source",
+        "identity_source_record_id",
+        "identity_source_url",
+        "identity_evidence_page",
+        "identity_evidence_quote",
+        "extraction_method",
+        "review_status",
+        "reviewed_at",
+        "confidence",
+        "source_status"
+      ]
+    },
+    "named_relation_corroborations.csv": {
+      "rows": 2,
+      "sha256": "51b10aa6a65fb209f5e18e52418e6816454343d8d4e8e82345ee2d46427161c9",
+      "columns": [
+        "corroboration_id",
+        "evidence_id",
+        "relation_id",
+        "corroboration_kind",
+        "source_company_id",
+        "subject_company_id",
+        "subject_symbol",
+        "subject_legal_name",
+        "reported_control_label",
+        "reported_direct_ownership_share",
+        "source",
+        "source_record_id",
+        "source_url",
+        "source_announcement_time",
+        "source_available_time",
+        "evidence_pages",
+        "evidence_quote",
+        "reviewed_at",
+        "available_time",
+        "extraction_method",
+        "review_status",
+        "conclusion",
+        "confidence",
+        "source_status"
+      ]
+    }
+  },
+  "known_limits": [
+    "4 companies still lack a CNINFO orgId and retain a temporary identity",
+    "industry membership is classification evidence, not a supplier-customer relation",
+    "company relation rows are period-bounded observations and must not be automatically continued beyond valid_to",
+    "pending activity-product mappings are candidates, not verified production facts",
+    "anonymous counterparties create concentration records but no company relation edges",
+    "historical listing dates fetched today retain today's available_time and must not be backfilled into old model states"
+  ]
+}

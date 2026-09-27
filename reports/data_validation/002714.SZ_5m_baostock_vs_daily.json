@@ -1,0 +1,55 @@
+{
+  "generated_at": "2026-08-16T21:17:10+08:00",
+  "symbol": "002714.SZ",
+  "minute_file": {
+    "path": "data/minute/002714.SZ/5m_baostock.csv",
+    "sha256": "9ff5b74b676ac530795476abc602420270f01a0c52d83fc70c73a4ef254a2492",
+    "rows": 30432
+  },
+  "daily_file": {
+    "path": "data/validation/002714.SZ/baostock_none/002714.SZ.csv",
+    "sha256": "10527c60fdba76ae5a15b9acd8cb21321f8f222268561c764f9f5178ae7fee75",
+    "rows": 634
+  },
+  "date_comparison": {
+    "minute_days": 634,
+    "daily_days": 634,
+    "overlap_days": 634,
+    "minute_only_days": 0,
+    "daily_only_days": 0
+  },
+  "session_structure": {
+    "minimum_rows_per_day": 48,
+    "maximum_rows_per_day": 48,
+    "first_bar_times": [
+      "09:35:00"
+    ],
+    "last_bar_times": [
+      "15:00:00"
+    ],
+    "duplicate_timestamps": 0,
+    "zero_volume_rows": 0
+  },
+  "daily_aggregation_comparison": {
+    "exact_days_by_field": {
+      "open": 634,
+      "high": 250,
+      "low": 260,
+      "close": 634,
+      "volume": 149
+    },
+    "all_ohlc_exact_days": 92,
+    "all_ohlcv_exact_days": 10,
+    "maximum_absolute_difference": {
+      "open": 0.0,
+      "high": 0.14999999999999858,
+      "low": 0.4299999999999997,
+      "close": 0.0,
+      "volume": 1483984.0
+    },
+    "volume_relative_difference_median": 1.5822976846931554e-06,
+    "volume_relative_difference_maximum": 0.02128253846961884
+  },
+  "quality_status": "archive_valid_source_values_need_caution",
+  "interpretation": "The archive is structurally complete, but same-source 5-minute aggregation does not reproduce every daily high, low, and volume value. Do not treat it as tick-complete or feed it into a model without resolving or accepting this source limitation."
+}

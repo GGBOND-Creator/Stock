@@ -1,0 +1,1 @@
+schema_version,flow_event_id,instrument_id,market,event_time,available_time,availability_policy,flow_measure,side,observed_amount,amount_unit,source,source_record_id,evidence_kind,method,quality_status

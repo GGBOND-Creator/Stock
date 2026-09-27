@@ -1,0 +1,2 @@
+edge_id,source_need_id,target_function_id,relation_type,event_time,available_time,valid_from,valid_to,evidence_kind,source_status,confidence,source,evidence_quote,review_status,notes
+EDGE_NEED_NUTRIENT,NEED_BASIC_NUTRITION,FUNC_NUTRIENT_SUPPLY,can_be_satisfied_by,2026-08-18T00:00:00+08:00,2026-08-18T00:00:00+08:00,2026-08-18T00:00:00+08:00,,model_definition,accepted_model_structure,structural_only,project_user_direction,,accepted_model_structure,结构关系不代表需求强度

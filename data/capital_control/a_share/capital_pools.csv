@@ -1,0 +1,7 @@
+﻿capital_pool_id,pool_type,display_name,currency,source,source_record_id,available_time,quality_status
+PUBLIC_FUND_000001,public_fund_product,华夏成长证券投资基金,CNY,Eastmoney fund overview via AkShare fund_overview_em,jbgk_000001,2026-08-17T10:38:09+08:00,third_party_aggregator_unverified
+PUBLIC_FUND_110022,public_fund_product,易方达消费行业股票型证券投资基金,CNY,Eastmoney fund overview via AkShare fund_overview_em,jbgk_110022,2026-08-17T10:38:09+08:00,third_party_aggregator_unverified
+PUBLIC_FUND_005827,public_fund_product,易方达蓝筹精选混合型证券投资基金,CNY,Eastmoney fund overview via AkShare fund_overview_em,jbgk_005827,2026-08-17T10:57:41+08:00,third_party_aggregator_unverified
+PUBLIC_FUND_260108,public_fund_product,景顺长城新兴成长混合型证券投资基金,CNY,Eastmoney fund overview via AkShare fund_overview_em,jbgk_260108,2026-08-17T10:57:41+08:00,third_party_aggregator_unverified
+PUBLIC_FUND_161725,public_fund_product,招商中证白酒指数证券投资基金(LOF),CNY,Eastmoney fund overview via AkShare fund_overview_em,jbgk_161725,2026-08-17T10:57:41+08:00,third_party_aggregator_unverified
+PUBLIC_FUND_003096,public_fund_product,中欧医疗健康混合型证券投资基金,CNY,Eastmoney fund overview via AkShare fund_overview_em,jbgk_003096,2026-08-17T10:57:41+08:00,third_party_aggregator_unverified

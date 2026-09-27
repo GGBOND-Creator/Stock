@@ -1,0 +1,6 @@
+dimension,definition,initial_fields,notes
+resource_endowment,Records the distribution of material resources such as energy minerals food water and forests,primary_resource;resource_role;reserve_proxy;production_proxy,Initial version uses qualitative proxy levels instead of official numeric reserves.
+geography_logistics,Records location transport access chokepoints terrain and distance constraints,region;lat;lon;logistics_access,Used to estimate whether resources can be moved into production and trade networks.
+climate_water,Records climate zone water stress and environmental constraints,climate_zone;water_stress;constraint_level,Initial version only captures broad pressure levels.
+population_capacity,Records population labor production capacity and settlement concentration,population_proxy;production_proxy;region,Population is treated as both material distribution and carrier of social activity.
+update_quality,Records update frequency source status and confidence,update_frequency;source_status;confidence,Every row must show whether it is seed verified imported or deprecated.

@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "capital_control_distribution_v1.schema.json",
+  "title": "Capital Control Attribution Distribution Row",
+  "description": "One conditional probability assigning a capital-flow event to a controller and role. Rows for the same flow_event_id must sum to 1; unresolved mass belongs to CONTROLLER_UNKNOWN.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "distribution_id",
+    "flow_event_id",
+    "instrument_id",
+    "event_time",
+    "available_time",
+    "controller_id",
+    "controller_class",
+    "control_role",
+    "probability",
+    "estimated_signed_amount",
+    "amount_unit",
+    "probability_status",
+    "probability_method",
+    "evidence_kind",
+    "evidence_ids",
+    "source",
+    "quality_status"
+  ],
+  "properties": {
+    "schema_version": { "const": "capital_control_distribution_v1" },
+    "distribution_id": { "type": "string", "minLength": 1 },
+    "flow_event_id": { "type": "string", "minLength": 1 },
+    "instrument_id": { "type": "string", "minLength": 1 },
+    "event_time": { "type": "string", "format": "date-time" },
+    "available_time": { "type": "string", "format": "date-time" },
+    "controller_id": { "type": "string", "minLength": 1 },
+    "controller_class": {
+      "enum": [
+        "household", "public_fund", "private_fund", "insurance",
+        "social_security", "state_owned", "corporate_treasury",
+        "foreign_investor", "controlling_shareholder", "broker_dealer",
+        "fund_management_company", "fund_manager", "bank",
+        "custodian_nominee", "market_maker", "other", "unknown"
+      ]
+    },
+    "control_role": {
+      "enum": [
+        "beneficial_owner", "mandate_decision_maker", "trader_executor",
+        "custodian_nominee", "inferred_group"
+      ]
+    },
+    "probability": { "type": "number", "minimum": 0, "maximum": 1 },
+    "estimated_signed_amount": { "type": ["number", "null"] },
+    "amount_unit": { "type": "string", "minLength": 1 },
+    "probability_status": {
+      "enum": ["observed_identity", "evidence_supported_estimate", "prior_only", "unresolved"]
+    },
+    "probability_method": { "type": "string", "minLength": 1 },
+    "evidence_kind": {
+      "enum": ["observation", "derived", "proxy", "unresolved"]
+    },
+    "evidence_ids": { "type": "string" },
+    "source": { "type": "string", "minLength": 1 },
+    "quality_status": { "type": "string", "minLength": 1 }
+  }
+}

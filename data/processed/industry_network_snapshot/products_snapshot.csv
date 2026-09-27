@@ -1,0 +1,2 @@
+﻿product_id,canonical_name,parent_product_id,product_kind,description,source,source_status,observed_at,network_active
+PRODUCT_bb59ddbd005ae7446459,生猪,,physical_good,Controlled vocabulary node; does not by itself assert company activity.,manual ontology seed from verbatim business evidence,manually_defined_vocabulary,2026-08-17T02:18:21+00:00,True

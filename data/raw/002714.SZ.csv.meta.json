@@ -1,0 +1,37 @@
+{
+  "schema_version": "ohlcv_daily_v1",
+  "created_at_utc": "2026-08-16T12:49:00+00:00",
+  "source": "AkShare stock_zh_a_hist (Eastmoney), cross-checked with BaoStock",
+  "symbol": "002714.SZ",
+  "market": "A-share",
+  "frequency": "1d",
+  "adjustment": "qfq",
+  "volume_unit": "lots",
+  "input_file": "002714.SZ.csv",
+  "input_sha256": "ac9a2de403b078cc66e9d52cc3e0090ab02a104cf7a7cd02395b7cbdfdf840a7",
+  "input_encoding": "utf-8-sig",
+  "output_file": "002714.SZ.csv",
+  "canonical_columns": [
+    "date",
+    "open",
+    "high",
+    "low",
+    "close",
+    "volume"
+  ],
+  "resolved_columns": {
+    "date": "date",
+    "open": "open",
+    "high": "high",
+    "low": "low",
+    "close": "close",
+    "volume": "volume"
+  },
+  "input_rows": 634,
+  "output_rows": 634,
+  "dropped_rows": 0,
+  "duplicate_dates": 0,
+  "date_start": "2024-01-02",
+  "date_end": "2026-08-14",
+  "warnings": []
+}

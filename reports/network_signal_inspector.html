@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>牧原食品集团股份有限公司网络信号</title>
+<style>
+:root {
+  color-scheme: light dark;
+  --bg: #f5f7f8;
+  --surface: #ffffff;
+  --surface-2: #eef1f2;
+  --text: #172126;
+  --muted: #607078;
+  --border: #cbd3d7;
+  --accent: #146c94;
+  --accent-soft: #dceff7;
+  --warning: #8a5a00;
+  --warning-soft: #fff1c7;
+  --production: #2e7d32;
+  --lifecycle: #455a64;
+  --neutral: #9aa6ac;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #15191b;
+    --surface: #202629;
+    --surface-2: #2a3235;
+    --text: #eef3f5;
+    --muted: #aab7bd;
+    --border: #465257;
+    --accent: #69b9dc;
+    --accent-soft: #173b4c;
+    --warning: #ffd479;
+    --warning-soft: #493814;
+    --production: #52bd67;
+    --lifecycle: #a7b4ba;
+    --neutral: #69767c;
+  }
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--text); font-family: "Segoe UI", "Microsoft YaHei", sans-serif; }
+main { width: min(100%, 1000px); margin: 0 auto; padding: 24px; }
+header { display: flex; align-items: end; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 22px; }
+h1, h2, p, dl, dd { margin: 0; }
+h1 { font-size: 24px; font-weight: 500; letter-spacing: 0; }
+h2 { font-size: 18px; font-weight: 500; letter-spacing: 0; }
+.meta, .small { color: var(--muted); font-size: 13px; }
+.flow { display: grid; grid-template-columns: minmax(0,1fr) 110px minmax(0,1fr) 110px minmax(0,1fr); gap: 10px; align-items: stretch; }
+.node { min-width: 0; min-height: 154px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface); color: var(--text); padding: 16px; text-align: left; display: flex; flex-direction: column; justify-content: space-between; gap: 14px; }
+button.node { cursor: pointer; font: inherit; }
+button.node:hover { border-color: var(--accent); }
+button.node[aria-pressed="true"] { border-color: var(--accent); outline: 2px solid var(--accent); outline-offset: 1px; }
+button.node:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+.node-head { display: flex; align-items: center; gap: 9px; font-weight: 500; }
+.mark { width: 17px; height: 17px; flex: 0 0 17px; display: inline-block; }
+.mark.lifecycle { border: 2px solid var(--lifecycle); }
+.mark.production { border-radius: 50%; background: var(--production); box-shadow: 0 0 0 5px color-mix(in srgb, var(--production) 18%, transparent); }
+.mark.neutral { border-radius: 50%; background: var(--neutral); }
+.node-body { display: grid; gap: 5px; min-width: 0; }
+.node-body span { overflow-wrap: anywhere; }
+.edge { min-width: 0; display: grid; place-content: center; text-align: center; gap: 7px; }
+.edge-line { width: 100%; height: 1px; background: var(--border); position: relative; }
+.edge-line::after { content: ""; position: absolute; right: 1px; top: -3px; width: 7px; height: 7px; border-top: 1px solid var(--border); border-right: 1px solid var(--border); transform: rotate(45deg); }
+.temporal-note { margin-top: 18px; padding: 12px 14px; background: var(--warning-soft); color: var(--warning); border-left: 3px solid var(--warning); }
+.detail { margin-top: 22px; padding-top: 20px; border-top: 1px solid var(--border); }
+.detail-head { display: flex; align-items: start; justify-content: space-between; gap: 12px; flex-wrap: wrap; margin-bottom: 18px; }
+.badge { display: inline-flex; align-items: center; min-height: 26px; padding: 3px 9px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); font-size: 13px; }
+.badge.later { background: var(--warning-soft); color: var(--warning); }
+.detail-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 16px 28px; }
+dt { color: var(--muted); font-size: 13px; margin-bottom: 4px; }
+dd { overflow-wrap: anywhere; }
+.evidence-switch { display: flex; gap: 8px; flex-wrap: wrap; margin: 18px 0 0; }
+.evidence-switch button { border: 1px solid var(--border); border-radius: 4px; background: var(--surface); color: var(--text); padding: 7px 10px; font: inherit; cursor: pointer; }
+.evidence-switch button[aria-pressed="true"] { background: var(--accent-soft); color: var(--accent); border-color: var(--accent); }
+.legend { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; color: var(--muted); font-size: 13px; }
+.legend span { display: inline-flex; align-items: center; gap: 7px; }
+footer { margin-top: 20px; color: var(--muted); font-size: 13px; }
+@media (max-width: 660px) {
+  main { padding: 16px; }
+  .flow { grid-template-columns: minmax(0,1fr); }
+  .node { min-height: 120px; }
+  .edge { grid-template-columns: 1fr auto; place-content: initial; align-items: center; text-align: left; padding: 0 12px; }
+  .edge-line { width: 1px; height: 34px; grid-column: 2; grid-row: 1 / span 2; }
+  .edge-line::after { right: -3px; top: auto; bottom: 1px; transform: rotate(135deg); }
+  .detail-grid { grid-template-columns: minmax(0,1fr); }
+}
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div>
+      <h1 id="report-title"></h1>
+      <p class="meta" id="report-symbol"></p>
+    </div>
+    <p class="meta" id="report-status"></p>
+  </header>
+
+  <section class="flow" id="network-flow" aria-label="上市阶段、企业和产品的网络信号"></section>
+  <p class="temporal-note" id="temporal-note" hidden></p>
+
+  <section class="detail" aria-labelledby="detail-title">
+    <div class="detail-head">
+      <div>
+        <h2 id="detail-title"></h2>
+        <p class="small" id="detail-subtitle"></p>
+      </div>
+      <span class="badge" id="detail-badge"></span>
+    </div>
+    <dl class="detail-grid">
+      <div><dt>快照时信号来源</dt><dd id="event-source"></dd></div>
+      <div><dt>独立证据来源</dt><dd id="evidence-source"></dd></div>
+      <div><dt>原始事实文本</dt><dd id="raw-text"></dd></div>
+      <div><dt>原始数值</dt><dd id="raw-number"></dd></div>
+      <div><dt>显示编码</dt><dd id="display-value"></dd></div>
+      <div><dt>证据质量</dt><dd id="evidence-quality"></dd></div>
+      <div><dt>证据可得时间</dt><dd id="evidence-time"></dd></div>
+      <div><dt>核验方法</dt><dd id="verification-method"></dd></div>
+    </dl>
+    <div class="evidence-switch" id="evidence-switch" aria-label="选择证据记录"></div>
+  </section>
+
+  <div class="legend">
+    <span><i class="mark lifecycle" aria-hidden="true"></i>生命周期直接信号</span>
+    <span><i class="mark production" aria-hidden="true"></i>生产活动直接信号</span>
+    <span><i class="mark neutral" aria-hidden="true"></i>无信号或未获传播</span>
+  </div>
+  <footer id="report-footer"></footer>
+</main>
+<script id="report-data" type="application/json">{"schema_version":"network_signal_report_v1","title":"牧原食品集团股份有限公司网络信号","symbol":"002714.SZ","as_of":"2026-08-18T04:00:00+00:00","company":{"company_id":"CNINFO_ORG_9900022995","company_name":"牧原食品集团股份有限公司"},"listing":{"listing_id":"LISTING_002714.SZ_UNKNOWN_SPELL","symbol":"002714.SZ","exchange":"SZSE","listing_date":"2014-01-28"},"signals":[{"key":"listing:LISTING_002714.SZ_UNKNOWN_SPELL:lifecycle.change","object_type":"listing","object_id":"LISTING_002714.SZ_UNKNOWN_SPELL","object_label":"上市阶段","object_name":"002714.SZ","signal_type":"lifecycle.change","signal_name":"生命周期变化","display_color":"#455A64","display_channel":"outline","concentration":1.0,"direct_contribution":1.0,"propagated_contribution":0.0,"source_event_count":1,"snapshot_quality":"direct_signal_only","event":{"source":"BaoStock query_stock_basic","source_record_id":"STATUS_3de54a4d161756b9047b","available_time":"2026-08-16T13:48:42+00:00","evidence_kind":"observation","initial_strength":1.0,"unit":"signal_unit"},"evidence":[{"evidence_id":"SIGNAL_EVIDENCE_7c72628800450b02e4d6","source":"Shenzhen Stock Exchange official A-share list","source_record_id":"SZSE_A_SHARE_LIST_1110_2026-08-18_002714","raw_numeric_display":"不适用","raw_unit":"not_applicable","raw_text":"牧原股份","available_time":"2026-08-18T06:39:27.684639+00:00","available_at_snapshot":false,"availability_label":"available_after_snapshot","source_locator":"data/external/a_share_industry_network/szse/20260818T063927Z/002714_a_share_list.json","evidence_kind":"official_observation","verification_method":"exact agdm=002714; exact name=牧原股份; board=主板; listing_date=2014-01-28","quality_status":"official_source_exact_code_and_name_match","dimension_type":"security","dimension_id":"002714"}],"known_evidence_count":0,"later_evidence_count":1},{"key":"company:CNINFO_ORG_9900022995:production.activity","object_type":"company","object_id":"CNINFO_ORG_9900022995","object_label":"企业","object_name":"牧原食品集团股份有限公司","signal_type":"production.activity","signal_name":"生产活动","display_color":"#2E7D32","display_channel":"glow","concentration":1.0,"direct_contribution":1.0,"propagated_contribution":0.0,"source_event_count":1,"snapshot_quality":"direct_signal_only","event":{"source":"CNINFO p_sysapi1133 company profile + explicit project review","source_record_id":"ACTIVITY_PRODUCT_e68171883dc3330a1a29","available_time":"2026-08-17T02:37:23+00:00","evidence_kind":"human_reviewed_observation","initial_strength":1.0,"unit":"signal_unit"},"evidence":[{"evidence_id":"SIGNAL_EVIDENCE_423e2545caa9eb5a3304","source":"CNINFO p_sysapi1133 company profile","source_record_id":"ACTIVITY_PRODUCT_e68171883dc3330a1a29","raw_numeric_display":"未披露","raw_unit":"not_reported","raw_text":"生猪的养殖与销售","available_time":"2026-08-17T02:37:23+00:00","available_at_snapshot":true,"availability_label":"available_at_snapshot","source_locator":"data/industry_network/a_share/activity_product_candidates.csv","evidence_kind":"human_reviewed_observation","verification_method":"exact quote match; role=producer; product=生猪; reviewer=project_user_authorized_review; reviewed_at=2026-08-17T02:37:23+00:00","quality_status":"human_reviewed_exact_text_match","dimension_type":"product","dimension_id":"PRODUCT_bb59ddbd005ae7446459"}],"known_evidence_count":1,"later_evidence_count":0}],"products":[{"product_id":"PRODUCT_bb59ddbd005ae7446459","product_name":"生猪","concentration":0.0,"propagated_contribution":0.0}],"nonzero_signal_count":2,"transmission_rule_count":0,"later_evidence_count":1,"all_propagated_zero":true}</script>
+<script>
+(() => {
+  const model = JSON.parse(document.getElementById("report-data").textContent);
+  const flow = document.getElementById("network-flow");
+  const fields = {
+    title: document.getElementById("detail-title"),
+    subtitle: document.getElementById("detail-subtitle"),
+    badge: document.getElementById("detail-badge"),
+    eventSource: document.getElementById("event-source"),
+    evidenceSource: document.getElementById("evidence-source"),
+    rawText: document.getElementById("raw-text"),
+    rawNumber: document.getElementById("raw-number"),
+    displayValue: document.getElementById("display-value"),
+    quality: document.getElementById("evidence-quality"),
+    evidenceTime: document.getElementById("evidence-time"),
+    verification: document.getElementById("verification-method"),
+    switcher: document.getElementById("evidence-switch")
+  };
+  let selectedSignal = model.signals.find(item => item.signal_type === "production.activity") || model.signals[0];
+  let selectedEvidenceIndex = 0;
+
+  const formatNumber = value => Number(value).toFixed(1);
+  const text = value => value === null || value === undefined || value === "" ? "未记录" : String(value);
+  const evidenceStatus = item => item.available_at_snapshot ? "快照时已可得" : "快照后取得，仅作后续核验";
+  const nodeMark = signal => signal.display_channel === "glow" ? "production" : "lifecycle";
+
+  const appendNodeContent = (node, markClass, label, name, value, context) => {
+    const head = document.createElement("span");
+    head.className = "node-head";
+    const mark = document.createElement("i");
+    mark.className = `mark ${markClass}`;
+    mark.setAttribute("aria-hidden", "true");
+    head.append(mark, document.createTextNode(text(label)));
+    const body = document.createElement("span");
+    body.className = "node-body";
+    const nameLine = document.createElement("span");
+    nameLine.className = "small";
+    nameLine.textContent = text(name);
+    const valueLine = document.createElement("span");
+    valueLine.textContent = text(value);
+    const contextLine = document.createElement("span");
+    contextLine.className = "small";
+    contextLine.textContent = text(context);
+    body.append(nameLine, valueLine, contextLine);
+    node.append(head, body);
+  };
+
+  const makeSignalNode = signal => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.className = "node";
+    button.dataset.signalKey = signal.key;
+    button.setAttribute("aria-pressed", String(signal.key === selectedSignal.key));
+    appendNodeContent(
+      button,
+      nodeMark(signal),
+      signal.object_label,
+      signal.object_name,
+      `${signal.signal_name} ${formatNumber(signal.concentration)}`,
+      `直接 ${formatNumber(signal.direct_contribution)} · 传播 ${formatNumber(signal.propagated_contribution)}`
+    );
+    button.addEventListener("click", () => { selectedSignal = signal; selectedEvidenceIndex = 0; renderSelection(); });
+    return button;
+  };
+
+  const makeEdge = label => {
+    const edge = document.createElement("div");
+    edge.className = "edge";
+    edge.setAttribute("aria-label", `${label}，传播贡献为零`);
+    const line = document.createElement("div");
+    line.className = "edge-line";
+    line.setAttribute("aria-hidden", "true");
+    const labelText = document.createElement("span");
+    labelText.className = "small";
+    labelText.textContent = label;
+    const valueText = document.createElement("span");
+    valueText.className = "small";
+    valueText.textContent = "传播 0.0";
+    edge.append(line, labelText, valueText);
+    return edge;
+  };
+
+  model.signals.forEach((signal, index) => {
+    flow.appendChild(makeSignalNode(signal));
+    if (index === 0) flow.appendChild(makeEdge("上市 → 企业"));
+  });
+  if (model.products.length) {
+    flow.appendChild(makeEdge("企业 → 产品"));
+    const product = model.products[0];
+    const node = document.createElement("div");
+    node.className = "node";
+    appendNodeContent(
+      node,
+      "neutral",
+      "产品",
+      product.product_name,
+      `当前信号 ${formatNumber(product.concentration)}`,
+      `传播 ${formatNumber(product.propagated_contribution)} · ${model.transmission_rule_count === 0 ? "未获传播规则授权" : "按规则计算"}`
+    );
+    flow.appendChild(node);
+  }
+
+  const renderEvidence = () => {
+    const items = selectedSignal.evidence;
+    const item = items[selectedEvidenceIndex] || null;
+    fields.switcher.replaceChildren();
+    items.forEach((entry, index) => {
+      const button = document.createElement("button");
+      button.type = "button";
+      button.setAttribute("aria-pressed", String(index === selectedEvidenceIndex));
+      button.textContent = `${index + 1} · ${evidenceStatus(entry)}`;
+      button.addEventListener("click", () => { selectedEvidenceIndex = index; renderEvidence(); });
+      fields.switcher.appendChild(button);
+    });
+    if (!item) {
+      fields.badge.textContent = "无独立证据记录";
+      fields.badge.className = "badge later";
+      fields.evidenceSource.textContent = "未记录";
+      fields.rawText.textContent = "未记录";
+      fields.rawNumber.textContent = "未记录";
+      fields.quality.textContent = "未记录";
+      fields.evidenceTime.textContent = "未记录";
+      fields.verification.textContent = "未记录";
+      return;
+    }
+    fields.badge.textContent = evidenceStatus(item);
+    fields.badge.className = item.available_at_snapshot ? "badge" : "badge later";
+    fields.evidenceSource.textContent = text(item.source);
+    fields.rawText.textContent = text(item.raw_text);
+    fields.rawNumber.textContent = text(item.raw_numeric_display);
+    fields.quality.textContent = text(item.quality_status);
+    fields.evidenceTime.textContent = text(item.available_time);
+    fields.verification.textContent = text(item.verification_method);
+  };
+
+  const renderSelection = () => {
+    document.querySelectorAll("button[data-signal-key]").forEach(button => {
+      button.setAttribute("aria-pressed", String(button.dataset.signalKey === selectedSignal.key));
+    });
+    fields.title.textContent = `${selectedSignal.signal_name}证据`;
+    fields.subtitle.textContent = `${selectedSignal.object_label} · ${selectedSignal.signal_type}`;
+    fields.eventSource.textContent = `${text(selectedSignal.event.source)} · ${text(selectedSignal.event.source_record_id)}`;
+    fields.displayValue.textContent = `直接 ${formatNumber(selectedSignal.direct_contribution)} · 传播 ${formatNumber(selectedSignal.propagated_contribution)}`;
+    renderEvidence();
+  };
+
+  document.getElementById("report-title").textContent = model.title;
+  document.getElementById("report-symbol").textContent = `${model.symbol} · 时点 ${model.as_of}`;
+  document.getElementById("report-status").textContent = `${model.nonzero_signal_count} 条非零信号 · ${model.transmission_rule_count} 条传播规则`;
+  document.getElementById("report-footer").textContent = `只读报告 · 快照传播贡献${model.all_propagated_zero ? "全部为零" : "含非零值"} · 不构成投资建议`;
+  const temporalNote = document.getElementById("temporal-note");
+  if (model.later_evidence_count > 0) {
+    temporalNote.hidden = false;
+    temporalNote.textContent = `${model.later_evidence_count} 条证据取得于快照时点之后，已保留为后续核验，不回填到快照状态。`;
+  }
+  renderSelection();
+})();
+</script>
+</body>
+</html>

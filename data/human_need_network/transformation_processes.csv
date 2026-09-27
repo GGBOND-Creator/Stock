@@ -1,0 +1,2 @@
+process_id,process_name,process_kind,description,event_time,available_time,evidence_kind,source_status,confidence,source,notes
+PROCESS_PIG_PRODUCTION,pig and pork supply process,animal_protein_transformation,"将饲料、用水、土地、能源、生物条件和物流等投入转化为生猪及猪肉供给；本行只定义过程，不给出产量或成本。",2026-08-18T00:00:00+08:00,2026-08-18T00:00:00+08:00,model_definition,accepted_model_structure,structural_only,project_user_direction,后续可拆分繁育养殖屠宰冷链

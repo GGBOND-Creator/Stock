@@ -1,0 +1,121 @@
+{
+  "fund_code": "003096",
+  "fund_name": "中欧医疗健康混合C",
+  "full_name": "中欧医疗健康混合型证券投资基金",
+  "report_period_end": "2026-06-30",
+  "report_id": "AN202607211827193222",
+  "index_title": "中欧医疗健康混合型证券投资基金2026年第2季度报告",
+  "index_announcement_date": "2026-07-21",
+  "index_available_time": "2026-07-21T23:59:59+08:00",
+  "downloaded_at": "2026-08-17T11:31:11+08:00",
+  "mirror_url": "https://pdf.dfcfw.com/pdf/H2_AN202607211827193222_1.pdf",
+  "pdf_file": "data\\external\\public_fund\\report_pdfs\\003096\\2026-06-30\\003096_2026-06-30_AN202607211827193222.pdf",
+  "pdf_sha256": "075e81ea868bc69f9ede9a668118a736272262ee4fe7b64eb1ec6cb3a0c119af",
+  "page_count": 13,
+  "text_character_count": 9568,
+  "identity_name_match": true,
+  "fund_code_match": true,
+  "report_period_match": true,
+  "expected_holding_rows": 10,
+  "matched_holding_rows": 10,
+  "holding_evidence_pages": [
+    9,
+    11
+  ],
+  "holding_checks": [
+    {
+      "instrument_id": "002821.SZ",
+      "security_name": "凯莱英",
+      "matched_pages": [
+        9
+      ]
+    },
+    {
+      "instrument_id": "688506.SH",
+      "security_name": "百利天恒",
+      "matched_pages": [
+        9
+      ]
+    },
+    {
+      "instrument_id": "600276.SH",
+      "security_name": "恒瑞医药",
+      "matched_pages": [
+        9
+      ]
+    },
+    {
+      "instrument_id": "603259.SH",
+      "security_name": "药明康德",
+      "matched_pages": [
+        9
+      ]
+    },
+    {
+      "instrument_id": "002653.SZ",
+      "security_name": "海思科",
+      "matched_pages": [
+        9
+      ]
+    },
+    {
+      "instrument_id": "300759.SZ",
+      "security_name": "康龙化成",
+      "matched_pages": [
+        9,
+        11
+      ]
+    },
+    {
+      "instrument_id": "002422.SZ",
+      "security_name": "科伦药业",
+      "matched_pages": [
+        9
+      ]
+    },
+    {
+      "instrument_id": "300347.SZ",
+      "security_name": "泰格医药",
+      "matched_pages": [
+        9
+      ]
+    },
+    {
+      "instrument_id": "688578.SH",
+      "security_name": "艾力斯",
+      "matched_pages": [
+        9
+      ]
+    },
+    {
+      "instrument_id": "688180.SH",
+      "security_name": "君实生物",
+      "matched_pages": [
+        9
+      ]
+    }
+  ],
+  "share_class_table_detected": true,
+  "six_digit_codes_in_document": [
+    "002422",
+    "002653",
+    "002821",
+    "003095",
+    "003096",
+    "019785",
+    "019792",
+    "300347",
+    "300759",
+    "600276",
+    "603259",
+    "688180",
+    "688506",
+    "688578"
+  ],
+  "quality_status": "pdf_content_verified_against_index_and_disclosed_holdings",
+  "known_limits": [
+    "PDF is archived from an Eastmoney mirror, not yet from the fund manager's official host",
+    "announcement date is supplied by the report index and may not appear inside the PDF",
+    "text matching verifies document identity and holdings presence, not every numeric table cell"
+  ]
+}

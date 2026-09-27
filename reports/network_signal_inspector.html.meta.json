@@ -1,0 +1,62 @@
+{
+  "schema_version": "network_signal_report_v1",
+  "generated_at_utc": "2026-08-18T07:13:07.134541+00:00",
+  "symbol": "002714.SZ",
+  "as_of": "2026-08-18T04:00:00+00:00",
+  "nonzero_signal_count": 2,
+  "transmission_rule_count": 0,
+  "later_evidence_count": 1,
+  "all_propagated_zero": true,
+  "output": "reports/network_signal_inspector.html",
+  "inputs": [
+    {
+      "path": "data/processed/network_signal_snapshot/signal_state_snapshot.csv",
+      "sha256": "407a66db15f05d8fb77051255e8d9cb60517f589ece513db97687ac22f6a93b4",
+      "size_bytes": 8293943
+    },
+    {
+      "path": "data/network_signals/a_share/signal_types.csv",
+      "sha256": "aaa580ce0a4a875592dbc8966fdf0908922dc31f9efdb485fc3a31f4ea969189",
+      "size_bytes": 1256
+    },
+    {
+      "path": "data/network_signals/a_share/signal_events.csv",
+      "sha256": "8aab885ab61717866bdefa39549f13033ef74459b70a451b555deae1c74f6d8a",
+      "size_bytes": 1029
+    },
+    {
+      "path": "data/network_signals/a_share/signal_event_evidence.csv",
+      "sha256": "754d63f2d543a68f3a9733eae956e43765eada9463e04e7795eaccb0d956848c",
+      "size_bytes": 1356
+    },
+    {
+      "path": "data/network_signals/a_share/transmission_rules.csv",
+      "sha256": "e810039b76fd5f318e8f1b4c9cdb0e30505112d13a3bf6ac946d9a4fb02277a0",
+      "size_bytes": 150
+    },
+    {
+      "path": "data/industry_network/a_share/companies.csv",
+      "sha256": "391911dc7286d6b17cc05789d96d3a8bc0b14ce781a2dd29c5fe22ebb8d087ba",
+      "size_bytes": 1111280
+    },
+    {
+      "path": "data/industry_network/a_share/listings.csv",
+      "sha256": "011258b5cdd690cb303bc2d9a71ccf8d52e9f9b47b4964d6ef797e7d0a9f1386",
+      "size_bytes": 1340388
+    },
+    {
+      "path": "data/industry_network/a_share/products.csv",
+      "sha256": "613d01dd3d83451918310f9ccc5fbbcc10c1d3edf4295d7bbee9e55354cf20f0",
+      "size_bytes": 337
+    },
+    {
+      "path": "data/industry_network/a_share/activity_product_candidates.csv",
+      "sha256": "2fcdff77fc4bf6044240c6022b9dba8c234186145502ab57a89244f07774dc9a",
+      "size_bytes": 1271
+    }
+  ],
+  "warnings": [
+    "Display strengths are encodings, not production quantity, valuation, return, or probability.",
+    "Evidence obtained after the snapshot is labelled as later verification and does not alter the earlier state."
+  ]
+}

@@ -1,0 +1,116 @@
+{
+  "fund_code": "005827",
+  "fund_name": "易方达蓝筹精选混合",
+  "full_name": "易方达蓝筹精选混合型证券投资基金",
+  "report_period_end": "2026-06-30",
+  "report_id": "AN202607211827164078",
+  "index_title": "易方达蓝筹精选混合型证券投资基金2026年第2季度报告",
+  "index_announcement_date": "2026-07-21",
+  "index_available_time": "2026-07-21T23:59:59+08:00",
+  "downloaded_at": "2026-08-17T11:31:11+08:00",
+  "mirror_url": "https://pdf.dfcfw.com/pdf/H2_AN202607211827164078_1.pdf",
+  "pdf_file": "data\\external\\public_fund\\report_pdfs\\005827\\2026-06-30\\005827_2026-06-30_AN202607211827164078.pdf",
+  "pdf_sha256": "c2f6fabb6789524168000b3207392b207ecb437480871a395a0271922e44073e",
+  "page_count": 13,
+  "text_character_count": 9632,
+  "identity_name_match": true,
+  "fund_code_match": true,
+  "report_period_match": true,
+  "expected_holding_rows": 10,
+  "matched_holding_rows": 10,
+  "holding_evidence_pages": [
+    8,
+    10,
+    11
+  ],
+  "holding_checks": [
+    {
+      "instrument_id": "00700.HK",
+      "security_name": "腾讯控股",
+      "matched_pages": [
+        8,
+        10,
+        11
+      ]
+    },
+    {
+      "instrument_id": "600519.SH",
+      "security_name": "贵州茅台",
+      "matched_pages": [
+        11
+      ]
+    },
+    {
+      "instrument_id": "09987.HK",
+      "security_name": "百胜中国",
+      "matched_pages": [
+        11
+      ]
+    },
+    {
+      "instrument_id": "00883.HK",
+      "security_name": "中国海洋石油",
+      "matched_pages": [
+        11
+      ]
+    },
+    {
+      "instrument_id": "000568.SZ",
+      "security_name": "泸州老窖",
+      "matched_pages": [
+        10,
+        11
+      ]
+    },
+    {
+      "instrument_id": "000858.SZ",
+      "security_name": "五粮液",
+      "matched_pages": [
+        11
+      ]
+    },
+    {
+      "instrument_id": "600809.SH",
+      "security_name": "山西汾酒",
+      "matched_pages": [
+        11
+      ]
+    },
+    {
+      "instrument_id": "00981.HK",
+      "security_name": "中芯国际",
+      "matched_pages": [
+        11
+      ]
+    },
+    {
+      "instrument_id": "002384.SZ",
+      "security_name": "东山精密",
+      "matched_pages": [
+        11
+      ]
+    },
+    {
+      "instrument_id": "09988.HK",
+      "security_name": "阿里巴巴-W",
+      "matched_pages": [
+        11
+      ]
+    }
+  ],
+  "share_class_table_detected": false,
+  "six_digit_codes_in_document": [
+    "000568",
+    "000858",
+    "002384",
+    "005827",
+    "600519",
+    "600809"
+  ],
+  "quality_status": "pdf_content_verified_against_index_and_disclosed_holdings",
+  "known_limits": [
+    "PDF is archived from an Eastmoney mirror, not yet from the fund manager's official host",
+    "announcement date is supplied by the report index and may not appear inside the PDF",
+    "text matching verifies document identity and holdings presence, not every numeric table cell"
+  ]
+}

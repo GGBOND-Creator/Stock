@@ -1,0 +1,763 @@
+{
+  "schema_version": "public_fund_report_pdf_audit_v1",
+  "created_at": "2026-08-17T11:31:11+08:00",
+  "report_period_end": "2026-06-30",
+  "records": [
+    {
+      "fund_code": "000001",
+      "fund_name": "华夏成长混合",
+      "full_name": "华夏成长证券投资基金",
+      "report_period_end": "2026-06-30",
+      "report_id": "AN202607211827191531",
+      "index_title": "华夏成长证券投资基金2026年第2季度报告",
+      "index_announcement_date": "2026-07-21",
+      "index_available_time": "2026-07-21T23:59:59+08:00",
+      "downloaded_at": "2026-08-17T11:31:11+08:00",
+      "mirror_url": "https://pdf.dfcfw.com/pdf/H2_AN202607211827191531_1.pdf",
+      "pdf_file": "data\\external\\public_fund\\report_pdfs\\000001\\2026-06-30\\000001_2026-06-30_AN202607211827191531.pdf",
+      "pdf_sha256": "5d719abce68b6d2c412c7efe99dea43b5600f2ec63413148f8a708929684e13b",
+      "page_count": 14,
+      "text_character_count": 9287,
+      "identity_name_match": true,
+      "fund_code_match": true,
+      "report_period_match": true,
+      "expected_holding_rows": 10,
+      "matched_holding_rows": 10,
+      "holding_evidence_pages": [
+        9,
+        12
+      ],
+      "holding_checks": [
+        {
+          "instrument_id": "300308.SZ",
+          "security_name": "中际旭创",
+          "matched_pages": [
+            9
+          ]
+        },
+        {
+          "instrument_id": "688347.SH",
+          "security_name": "华虹宏力",
+          "matched_pages": [
+            9
+          ]
+        },
+        {
+          "instrument_id": "688361.SH",
+          "security_name": "中科飞测",
+          "matched_pages": [
+            9
+          ]
+        },
+        {
+          "instrument_id": "688012.SH",
+          "security_name": "中微公司",
+          "matched_pages": [
+            9
+          ]
+        },
+        {
+          "instrument_id": "688120.SH",
+          "security_name": "华海清科",
+          "matched_pages": [
+            9
+          ]
+        },
+        {
+          "instrument_id": "688072.SH",
+          "security_name": "拓荆科技",
+          "matched_pages": [
+            9,
+            12
+          ]
+        },
+        {
+          "instrument_id": "688256.SH",
+          "security_name": "寒武纪",
+          "matched_pages": [
+            9
+          ]
+        },
+        {
+          "instrument_id": "002371.SZ",
+          "security_name": "北方华创",
+          "matched_pages": [
+            9
+          ]
+        },
+        {
+          "instrument_id": "688041.SH",
+          "security_name": "海光信息",
+          "matched_pages": [
+            9
+          ]
+        },
+        {
+          "instrument_id": "688037.SH",
+          "security_name": "芯源微",
+          "matched_pages": [
+            9
+          ]
+        }
+      ],
+      "share_class_table_detected": false,
+      "six_digit_codes_in_document": [
+        "000001",
+        "000002",
+        "002371",
+        "019785",
+        "019792",
+        "019827",
+        "110086",
+        "110090",
+        "110095",
+        "113046",
+        "113056",
+        "113640",
+        "113649",
+        "113658",
+        "113666",
+        "113670",
+        "113679",
+        "113680",
+        "113691",
+        "118031",
+        "118039",
+        "123088",
+        "123104",
+        "123107",
+        "123112",
+        "123165",
+        "123193",
+        "123243",
+        "127056",
+        "127061",
+        "127068",
+        "127069",
+        "128138",
+        "128142",
+        "260401",
+        "300308",
+        "524462",
+        "688012",
+        "688037",
+        "688041",
+        "688072",
+        "688120",
+        "688256",
+        "688347",
+        "688361"
+      ],
+      "quality_status": "pdf_content_verified_against_index_and_disclosed_holdings",
+      "known_limits": [
+        "PDF is archived from an Eastmoney mirror, not yet from the fund manager's official host",
+        "announcement date is supplied by the report index and may not appear inside the PDF",
+        "text matching verifies document identity and holdings presence, not every numeric table cell"
+      ]
+    },
+    {
+      "fund_code": "110022",
+      "fund_name": "易方达消费行业股票",
+      "full_name": "易方达消费行业股票型证券投资基金",
+      "report_period_end": "2026-06-30",
+      "report_id": "AN202607211827164035",
+      "index_title": "易方达消费行业股票型证券投资基金2026年第2季度报告",
+      "index_announcement_date": "2026-07-21",
+      "index_available_time": "2026-07-21T23:59:59+08:00",
+      "downloaded_at": "2026-08-17T11:31:11+08:00",
+      "mirror_url": "https://pdf.dfcfw.com/pdf/H2_AN202607211827164035_1.pdf",
+      "pdf_file": "data\\external\\public_fund\\report_pdfs\\110022\\2026-06-30\\110022_2026-06-30_AN202607211827164035.pdf",
+      "pdf_sha256": "63d539815cce74b618c798956c717c674be91b2c5f823e9befc65092e21a9ce4",
+      "page_count": 12,
+      "text_character_count": 7992,
+      "identity_name_match": true,
+      "fund_code_match": true,
+      "report_period_match": true,
+      "expected_holding_rows": 10,
+      "matched_holding_rows": 10,
+      "holding_evidence_pages": [
+        8,
+        9,
+        10
+      ],
+      "holding_checks": [
+        {
+          "instrument_id": "600519.SH",
+          "security_name": "贵州茅台",
+          "matched_pages": [
+            9
+          ]
+        },
+        {
+          "instrument_id": "000333.SZ",
+          "security_name": "美的集团",
+          "matched_pages": [
+            9
+          ]
+        },
+        {
+          "instrument_id": "600809.SH",
+          "security_name": "山西汾酒",
+          "matched_pages": [
+            9
+          ]
+        },
+        {
+          "instrument_id": "002594.SZ",
+          "security_name": "比亚迪",
+          "matched_pages": [
+            9
+          ]
+        },
+        {
+          "instrument_id": "600660.SH",
+          "security_name": "福耀玻璃",
+          "matched_pages": [
+            9
+          ]
+        },
+        {
+          "instrument_id": "603129.SH",
+          "security_name": "春风动力",
+          "matched_pages": [
+            9,
+            10
+          ]
+        },
+        {
+          "instrument_id": "601058.SH",
+          "security_name": "赛轮轮胎",
+          "matched_pages": [
+            9
+          ]
+        },
+        {
+          "instrument_id": "000568.SZ",
+          "security_name": "泸州老窖",
+          "matched_pages": [
+            9
+          ]
+        },
+        {
+          "instrument_id": "000596.SZ",
+          "security_name": "古井贡酒",
+          "matched_pages": [
+            8,
+            9
+          ]
+        },
+        {
+          "instrument_id": "603288.SH",
+          "security_name": "海天味业",
+          "matched_pages": [
+            9
+          ]
+        }
+      ],
+      "share_class_table_detected": false,
+      "six_digit_codes_in_document": [
+        "000333",
+        "000568",
+        "000596",
+        "002594",
+        "110022",
+        "113655",
+        "113704",
+        "127045",
+        "127046",
+        "600519",
+        "600660",
+        "600809",
+        "601058",
+        "603129",
+        "603288"
+      ],
+      "quality_status": "pdf_content_verified_against_index_and_disclosed_holdings",
+      "known_limits": [
+        "PDF is archived from an Eastmoney mirror, not yet from the fund manager's official host",
+        "announcement date is supplied by the report index and may not appear inside the PDF",
+        "text matching verifies document identity and holdings presence, not every numeric table cell"
+      ]
+    },
+    {
+      "fund_code": "005827",
+      "fund_name": "易方达蓝筹精选混合",
+      "full_name": "易方达蓝筹精选混合型证券投资基金",
+      "report_period_end": "2026-06-30",
+      "report_id": "AN202607211827164078",
+      "index_title": "易方达蓝筹精选混合型证券投资基金2026年第2季度报告",
+      "index_announcement_date": "2026-07-21",
+      "index_available_time": "2026-07-21T23:59:59+08:00",
+      "downloaded_at": "2026-08-17T11:31:11+08:00",
+      "mirror_url": "https://pdf.dfcfw.com/pdf/H2_AN202607211827164078_1.pdf",
+      "pdf_file": "data\\external\\public_fund\\report_pdfs\\005827\\2026-06-30\\005827_2026-06-30_AN202607211827164078.pdf",
+      "pdf_sha256": "c2f6fabb6789524168000b3207392b207ecb437480871a395a0271922e44073e",
+      "page_count": 13,
+      "text_character_count": 9632,
+      "identity_name_match": true,
+      "fund_code_match": true,
+      "report_period_match": true,
+      "expected_holding_rows": 10,
+      "matched_holding_rows": 10,
+      "holding_evidence_pages": [
+        8,
+        10,
+        11
+      ],
+      "holding_checks": [
+        {
+          "instrument_id": "00700.HK",
+          "security_name": "腾讯控股",
+          "matched_pages": [
+            8,
+            10,
+            11
+          ]
+        },
+        {
+          "instrument_id": "600519.SH",
+          "security_name": "贵州茅台",
+          "matched_pages": [
+            11
+          ]
+        },
+        {
+          "instrument_id": "09987.HK",
+          "security_name": "百胜中国",
+          "matched_pages": [
+            11
+          ]
+        },
+        {
+          "instrument_id": "00883.HK",
+          "security_name": "中国海洋石油",
+          "matched_pages": [
+            11
+          ]
+        },
+        {
+          "instrument_id": "000568.SZ",
+          "security_name": "泸州老窖",
+          "matched_pages": [
+            10,
+            11
+          ]
+        },
+        {
+          "instrument_id": "000858.SZ",
+          "security_name": "五粮液",
+          "matched_pages": [
+            11
+          ]
+        },
+        {
+          "instrument_id": "600809.SH",
+          "security_name": "山西汾酒",
+          "matched_pages": [
+            11
+          ]
+        },
+        {
+          "instrument_id": "00981.HK",
+          "security_name": "中芯国际",
+          "matched_pages": [
+            11
+          ]
+        },
+        {
+          "instrument_id": "002384.SZ",
+          "security_name": "东山精密",
+          "matched_pages": [
+            11
+          ]
+        },
+        {
+          "instrument_id": "09988.HK",
+          "security_name": "阿里巴巴-W",
+          "matched_pages": [
+            11
+          ]
+        }
+      ],
+      "share_class_table_detected": false,
+      "six_digit_codes_in_document": [
+        "000568",
+        "000858",
+        "002384",
+        "005827",
+        "600519",
+        "600809"
+      ],
+      "quality_status": "pdf_content_verified_against_index_and_disclosed_holdings",
+      "known_limits": [
+        "PDF is archived from an Eastmoney mirror, not yet from the fund manager's official host",
+        "announcement date is supplied by the report index and may not appear inside the PDF",
+        "text matching verifies document identity and holdings presence, not every numeric table cell"
+      ]
+    },
+    {
+      "fund_code": "260108",
+      "fund_name": "景顺长城新兴成长混合A",
+      "full_name": "景顺长城新兴成长混合型证券投资基金",
+      "report_period_end": "2026-06-30",
+      "report_id": "AN202607211827167449",
+      "index_title": "景顺长城新兴成长混合型证券投资基金2026年第2季度报告",
+      "index_announcement_date": "2026-07-21",
+      "index_available_time": "2026-07-21T23:59:59+08:00",
+      "downloaded_at": "2026-08-17T11:31:11+08:00",
+      "mirror_url": "https://pdf.dfcfw.com/pdf/H2_AN202607211827167449_1.pdf",
+      "pdf_file": "data\\external\\public_fund\\report_pdfs\\260108\\2026-06-30\\260108_2026-06-30_AN202607211827167449.pdf",
+      "pdf_sha256": "4f35f077c0ed759fa1eb670131d802606d90e72e0951d0a2683ebef933f00246",
+      "page_count": 12,
+      "text_character_count": 9103,
+      "identity_name_match": true,
+      "fund_code_match": true,
+      "report_period_match": true,
+      "expected_holding_rows": 10,
+      "matched_holding_rows": 10,
+      "holding_evidence_pages": [
+        8,
+        9
+      ],
+      "holding_checks": [
+        {
+          "instrument_id": "603259.SH",
+          "security_name": "药明康德",
+          "matched_pages": [
+            8
+          ]
+        },
+        {
+          "instrument_id": "600519.SH",
+          "security_name": "贵州茅台",
+          "matched_pages": [
+            8
+          ]
+        },
+        {
+          "instrument_id": "000333.SZ",
+          "security_name": "美的集团",
+          "matched_pages": [
+            8
+          ]
+        },
+        {
+          "instrument_id": "002311.SZ",
+          "security_name": "海大集团",
+          "matched_pages": [
+            8
+          ]
+        },
+        {
+          "instrument_id": "603899.SH",
+          "security_name": "晨光股份",
+          "matched_pages": [
+            9
+          ]
+        },
+        {
+          "instrument_id": "002415.SZ",
+          "security_name": "海康威视",
+          "matched_pages": [
+            9
+          ]
+        },
+        {
+          "instrument_id": "300750.SZ",
+          "security_name": "宁德时代",
+          "matched_pages": [
+            9
+          ]
+        },
+        {
+          "instrument_id": "600809.SH",
+          "security_name": "山西汾酒",
+          "matched_pages": [
+            9
+          ]
+        },
+        {
+          "instrument_id": "000596.SZ",
+          "security_name": "古井贡酒",
+          "matched_pages": [
+            9
+          ]
+        },
+        {
+          "instrument_id": "600887.SH",
+          "security_name": "伊利股份",
+          "matched_pages": [
+            9
+          ]
+        }
+      ],
+      "share_class_table_detected": true,
+      "six_digit_codes_in_document": [
+        "000333",
+        "000596",
+        "002311",
+        "002415",
+        "017110",
+        "260108",
+        "300750",
+        "600519",
+        "600809",
+        "600887",
+        "603259",
+        "603899"
+      ],
+      "quality_status": "pdf_content_verified_against_index_and_disclosed_holdings",
+      "known_limits": [
+        "PDF is archived from an Eastmoney mirror, not yet from the fund manager's official host",
+        "announcement date is supplied by the report index and may not appear inside the PDF",
+        "text matching verifies document identity and holdings presence, not every numeric table cell"
+      ]
+    },
+    {
+      "fund_code": "161725",
+      "fund_name": "招商中证白酒指数(LOF)A",
+      "full_name": "招商中证白酒指数证券投资基金(LOF)",
+      "report_period_end": "2026-06-30",
+      "report_id": "AN202607201827156014",
+      "index_title": "招商中证白酒指数证券投资基金2026年第2季度报告",
+      "index_announcement_date": "2026-07-21",
+      "index_available_time": "2026-07-21T23:59:59+08:00",
+      "downloaded_at": "2026-08-17T11:31:11+08:00",
+      "mirror_url": "https://pdf.dfcfw.com/pdf/H2_AN202607201827156014_1.pdf",
+      "pdf_file": "data\\external\\public_fund\\report_pdfs\\161725\\2026-06-30\\161725_2026-06-30_AN202607201827156014.pdf",
+      "pdf_sha256": "53bfa4799e217b62f6aea9db8f2be6a54dfd8d043cd05cd67297e6ae3cf82c7e",
+      "page_count": 14,
+      "text_character_count": 10318,
+      "identity_name_match": true,
+      "fund_code_match": true,
+      "report_period_match": true,
+      "expected_holding_rows": 10,
+      "matched_holding_rows": 10,
+      "holding_evidence_pages": [
+        2,
+        10
+      ],
+      "holding_checks": [
+        {
+          "instrument_id": "600519.SH",
+          "security_name": "贵州茅台",
+          "matched_pages": [
+            10
+          ]
+        },
+        {
+          "instrument_id": "600809.SH",
+          "security_name": "山西汾酒",
+          "matched_pages": [
+            10
+          ]
+        },
+        {
+          "instrument_id": "000568.SZ",
+          "security_name": "泸州老窖",
+          "matched_pages": [
+            10
+          ]
+        },
+        {
+          "instrument_id": "000858.SZ",
+          "security_name": "五粮液",
+          "matched_pages": [
+            2,
+            10
+          ]
+        },
+        {
+          "instrument_id": "002304.SZ",
+          "security_name": "洋河股份",
+          "matched_pages": [
+            10
+          ]
+        },
+        {
+          "instrument_id": "000596.SZ",
+          "security_name": "古井贡酒",
+          "matched_pages": [
+            10
+          ]
+        },
+        {
+          "instrument_id": "603369.SH",
+          "security_name": "今世缘",
+          "matched_pages": [
+            10
+          ]
+        },
+        {
+          "instrument_id": "603198.SH",
+          "security_name": "迎驾贡酒",
+          "matched_pages": [
+            10
+          ]
+        },
+        {
+          "instrument_id": "000799.SZ",
+          "security_name": "酒鬼酒",
+          "matched_pages": [
+            10
+          ]
+        },
+        {
+          "instrument_id": "600702.SH",
+          "security_name": "舍得酒业",
+          "matched_pages": [
+            10
+          ]
+        }
+      ],
+      "share_class_table_detected": true,
+      "six_digit_codes_in_document": [
+        "000568",
+        "000596",
+        "000799",
+        "000858",
+        "002304",
+        "012414",
+        "118034",
+        "161725",
+        "600197",
+        "600519",
+        "600702",
+        "600809",
+        "601077",
+        "601658",
+        "603198",
+        "603369",
+        "688223",
+        "688981"
+      ],
+      "quality_status": "pdf_content_verified_against_index_and_disclosed_holdings",
+      "known_limits": [
+        "PDF is archived from an Eastmoney mirror, not yet from the fund manager's official host",
+        "announcement date is supplied by the report index and may not appear inside the PDF",
+        "text matching verifies document identity and holdings presence, not every numeric table cell"
+      ]
+    },
+    {
+      "fund_code": "003096",
+      "fund_name": "中欧医疗健康混合C",
+      "full_name": "中欧医疗健康混合型证券投资基金",
+      "report_period_end": "2026-06-30",
+      "report_id": "AN202607211827193222",
+      "index_title": "中欧医疗健康混合型证券投资基金2026年第2季度报告",
+      "index_announcement_date": "2026-07-21",
+      "index_available_time": "2026-07-21T23:59:59+08:00",
+      "downloaded_at": "2026-08-17T11:31:11+08:00",
+      "mirror_url": "https://pdf.dfcfw.com/pdf/H2_AN202607211827193222_1.pdf",
+      "pdf_file": "data\\external\\public_fund\\report_pdfs\\003096\\2026-06-30\\003096_2026-06-30_AN202607211827193222.pdf",
+      "pdf_sha256": "075e81ea868bc69f9ede9a668118a736272262ee4fe7b64eb1ec6cb3a0c119af",
+      "page_count": 13,
+      "text_character_count": 9568,
+      "identity_name_match": true,
+      "fund_code_match": true,
+      "report_period_match": true,
+      "expected_holding_rows": 10,
+      "matched_holding_rows": 10,
+      "holding_evidence_pages": [
+        9,
+        11
+      ],
+      "holding_checks": [
+        {
+          "instrument_id": "002821.SZ",
+          "security_name": "凯莱英",
+          "matched_pages": [
+            9
+          ]
+        },
+        {
+          "instrument_id": "688506.SH",
+          "security_name": "百利天恒",
+          "matched_pages": [
+            9
+          ]
+        },
+        {
+          "instrument_id": "600276.SH",
+          "security_name": "恒瑞医药",
+          "matched_pages": [
+            9
+          ]
+        },
+        {
+          "instrument_id": "603259.SH",
+          "security_name": "药明康德",
+          "matched_pages": [
+            9
+          ]
+        },
+        {
+          "instrument_id": "002653.SZ",
+          "security_name": "海思科",
+          "matched_pages": [
+            9
+          ]
+        },
+        {
+          "instrument_id": "300759.SZ",
+          "security_name": "康龙化成",
+          "matched_pages": [
+            9,
+            11
+          ]
+        },
+        {
+          "instrument_id": "002422.SZ",
+          "security_name": "科伦药业",
+          "matched_pages": [
+            9
+          ]
+        },
+        {
+          "instrument_id": "300347.SZ",
+          "security_name": "泰格医药",
+          "matched_pages": [
+            9
+          ]
+        },
+        {
+          "instrument_id": "688578.SH",
+          "security_name": "艾力斯",
+          "matched_pages": [
+            9
+          ]
+        },
+        {
+          "instrument_id": "688180.SH",
+          "security_name": "君实生物",
+          "matched_pages": [
+            9
+          ]
+        }
+      ],
+      "share_class_table_detected": true,
+      "six_digit_codes_in_document": [
+        "002422",
+        "002653",
+        "002821",
+        "003095",
+        "003096",
+        "019785",
+        "019792",
+        "300347",
+        "300759",
+        "600276",
+        "603259",
+        "688180",
+        "688506",
+        "688578"
+      ],
+      "quality_status": "pdf_content_verified_against_index_and_disclosed_holdings",
+      "known_limits": [
+        "PDF is archived from an Eastmoney mirror, not yet from the fund manager's official host",
+        "announcement date is supplied by the report index and may not appear inside the PDF",
+        "text matching verifies document identity and holdings presence, not every numeric table cell"
+      ]
+    }
+  ]
+}

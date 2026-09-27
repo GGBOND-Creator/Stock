@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "a_share_industry_network_v1.schema.json",
+  "title": "A-share Industry Network Contract",
+  "description": "A multi-table temporal network whose company registry survives listing and delisting transitions.",
+  "type": "object",
+  "required": ["schema_version", "tables", "time_semantics"],
+  "properties": {
+    "schema_version": { "const": "a_share_industry_network_v1" },
+    "time_semantics": {
+      "type": "object",
+      "properties": {
+        "event_time": { "description": "When the external event occurred." },
+        "available_time": { "description": "When the model could first know the record." },
+        "effective_time": { "description": "When the event changes network state." }
+      },
+      "required": ["event_time", "available_time", "effective_time"]
+    },
+    "tables": {
+      "type": "object",
+      "required": [
+        "companies.csv",
+        "listings.csv",
+        "industries.csv",
+        "industry_memberships.csv",
+        "company_relations.csv",
+        "business_activities.csv",
+        "lifecycle_events.csv"
+      ],
+      "properties": {
+        "companies.csv": { "description": "Durable enterprise registry." },
+        "listings.csv": { "description": "Security listing spells linked to enterprises." },
+        "industries.csv": { "description": "Versioned industry classification nodes." },
+        "industry_memberships.csv": { "description": "Temporal company-to-industry edges." },
+        "company_relations.csv": { "description": "Evidence-backed supplier, customer, competitor and substitution edges." },
+        "business_activities.csv": { "description": "Verbatim or parsed evidence about products, services and production roles." },
+        "lifecycle_events.csv": { "description": "Listing, suspension, risk-warning, delisting and relisting events." }
+      }
+    }
+  }
+}

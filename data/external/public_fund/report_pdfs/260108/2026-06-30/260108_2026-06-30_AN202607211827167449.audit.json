@@ -1,0 +1,118 @@
+{
+  "fund_code": "260108",
+  "fund_name": "景顺长城新兴成长混合A",
+  "full_name": "景顺长城新兴成长混合型证券投资基金",
+  "report_period_end": "2026-06-30",
+  "report_id": "AN202607211827167449",
+  "index_title": "景顺长城新兴成长混合型证券投资基金2026年第2季度报告",
+  "index_announcement_date": "2026-07-21",
+  "index_available_time": "2026-07-21T23:59:59+08:00",
+  "downloaded_at": "2026-08-17T11:31:11+08:00",
+  "mirror_url": "https://pdf.dfcfw.com/pdf/H2_AN202607211827167449_1.pdf",
+  "pdf_file": "data\\external\\public_fund\\report_pdfs\\260108\\2026-06-30\\260108_2026-06-30_AN202607211827167449.pdf",
+  "pdf_sha256": "4f35f077c0ed759fa1eb670131d802606d90e72e0951d0a2683ebef933f00246",
+  "page_count": 12,
+  "text_character_count": 9103,
+  "identity_name_match": true,
+  "fund_code_match": true,
+  "report_period_match": true,
+  "expected_holding_rows": 10,
+  "matched_holding_rows": 10,
+  "holding_evidence_pages": [
+    8,
+    9
+  ],
+  "holding_checks": [
+    {
+      "instrument_id": "603259.SH",
+      "security_name": "药明康德",
+      "matched_pages": [
+        8
+      ]
+    },
+    {
+      "instrument_id": "600519.SH",
+      "security_name": "贵州茅台",
+      "matched_pages": [
+        8
+      ]
+    },
+    {
+      "instrument_id": "000333.SZ",
+      "security_name": "美的集团",
+      "matched_pages": [
+        8
+      ]
+    },
+    {
+      "instrument_id": "002311.SZ",
+      "security_name": "海大集团",
+      "matched_pages": [
+        8
+      ]
+    },
+    {
+      "instrument_id": "603899.SH",
+      "security_name": "晨光股份",
+      "matched_pages": [
+        9
+      ]
+    },
+    {
+      "instrument_id": "002415.SZ",
+      "security_name": "海康威视",
+      "matched_pages": [
+        9
+      ]
+    },
+    {
+      "instrument_id": "300750.SZ",
+      "security_name": "宁德时代",
+      "matched_pages": [
+        9
+      ]
+    },
+    {
+      "instrument_id": "600809.SH",
+      "security_name": "山西汾酒",
+      "matched_pages": [
+        9
+      ]
+    },
+    {
+      "instrument_id": "000596.SZ",
+      "security_name": "古井贡酒",
+      "matched_pages": [
+        9
+      ]
+    },
+    {
+      "instrument_id": "600887.SH",
+      "security_name": "伊利股份",
+      "matched_pages": [
+        9
+      ]
+    }
+  ],
+  "share_class_table_detected": true,
+  "six_digit_codes_in_document": [
+    "000333",
+    "000596",
+    "002311",
+    "002415",
+    "017110",
+    "260108",
+    "300750",
+    "600519",
+    "600809",
+    "600887",
+    "603259",
+    "603899"
+  ],
+  "quality_status": "pdf_content_verified_against_index_and_disclosed_holdings",
+  "known_limits": [
+    "PDF is archived from an Eastmoney mirror, not yet from the fund manager's official host",
+    "announcement date is supplied by the report index and may not appear inside the PDF",
+    "text matching verifies document identity and holdings presence, not every numeric table cell"
+  ]
+}

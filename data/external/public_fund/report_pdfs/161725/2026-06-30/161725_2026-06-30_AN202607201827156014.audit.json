@@ -1,0 +1,125 @@
+{
+  "fund_code": "161725",
+  "fund_name": "招商中证白酒指数(LOF)A",
+  "full_name": "招商中证白酒指数证券投资基金(LOF)",
+  "report_period_end": "2026-06-30",
+  "report_id": "AN202607201827156014",
+  "index_title": "招商中证白酒指数证券投资基金2026年第2季度报告",
+  "index_announcement_date": "2026-07-21",
+  "index_available_time": "2026-07-21T23:59:59+08:00",
+  "downloaded_at": "2026-08-17T11:31:11+08:00",
+  "mirror_url": "https://pdf.dfcfw.com/pdf/H2_AN202607201827156014_1.pdf",
+  "pdf_file": "data\\external\\public_fund\\report_pdfs\\161725\\2026-06-30\\161725_2026-06-30_AN202607201827156014.pdf",
+  "pdf_sha256": "53bfa4799e217b62f6aea9db8f2be6a54dfd8d043cd05cd67297e6ae3cf82c7e",
+  "page_count": 14,
+  "text_character_count": 10318,
+  "identity_name_match": true,
+  "fund_code_match": true,
+  "report_period_match": true,
+  "expected_holding_rows": 10,
+  "matched_holding_rows": 10,
+  "holding_evidence_pages": [
+    2,
+    10
+  ],
+  "holding_checks": [
+    {
+      "instrument_id": "600519.SH",
+      "security_name": "贵州茅台",
+      "matched_pages": [
+        10
+      ]
+    },
+    {
+      "instrument_id": "600809.SH",
+      "security_name": "山西汾酒",
+      "matched_pages": [
+        10
+      ]
+    },
+    {
+      "instrument_id": "000568.SZ",
+      "security_name": "泸州老窖",
+      "matched_pages": [
+        10
+      ]
+    },
+    {
+      "instrument_id": "000858.SZ",
+      "security_name": "五粮液",
+      "matched_pages": [
+        2,
+        10
+      ]
+    },
+    {
+      "instrument_id": "002304.SZ",
+      "security_name": "洋河股份",
+      "matched_pages": [
+        10
+      ]
+    },
+    {
+      "instrument_id": "000596.SZ",
+      "security_name": "古井贡酒",
+      "matched_pages": [
+        10
+      ]
+    },
+    {
+      "instrument_id": "603369.SH",
+      "security_name": "今世缘",
+      "matched_pages": [
+        10
+      ]
+    },
+    {
+      "instrument_id": "603198.SH",
+      "security_name": "迎驾贡酒",
+      "matched_pages": [
+        10
+      ]
+    },
+    {
+      "instrument_id": "000799.SZ",
+      "security_name": "酒鬼酒",
+      "matched_pages": [
+        10
+      ]
+    },
+    {
+      "instrument_id": "600702.SH",
+      "security_name": "舍得酒业",
+      "matched_pages": [
+        10
+      ]
+    }
+  ],
+  "share_class_table_detected": true,
+  "six_digit_codes_in_document": [
+    "000568",
+    "000596",
+    "000799",
+    "000858",
+    "002304",
+    "012414",
+    "118034",
+    "161725",
+    "600197",
+    "600519",
+    "600702",
+    "600809",
+    "601077",
+    "601658",
+    "603198",
+    "603369",
+    "688223",
+    "688981"
+  ],
+  "quality_status": "pdf_content_verified_against_index_and_disclosed_holdings",
+  "known_limits": [
+    "PDF is archived from an Eastmoney mirror, not yet from the fund manager's official host",
+    "announcement date is supplied by the report index and may not appear inside the PDF",
+    "text matching verifies document identity and holdings presence, not every numeric table cell"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "human_need_resource_network_v2.schema.json",
+  "title": "Human Biological Need and Resource Network Contract v2",
+  "description": "A species/population-scale human need taxonomy spanning material, reproductive, neural, social and emergent spiritual regulation. Individuals are observation/carrier units, not unique network roots.",
+  "type": "object",
+  "required": ["schema_version", "root_layer", "need_semantics", "time_semantics", "tables", "status_rules"],
+  "properties": {
+    "schema_version": {"const": "human_need_resource_network_v2"},
+    "root_layer": {"const": "human_biological_population_continuity"},
+    "need_semantics": {
+      "type": "object",
+      "required": ["population_scope", "need_nature", "biological_basis", "cultural_variability"],
+      "properties": {
+        "population_scope": {"description": "Biological scale at which the need is aggregated: organism population, reproductive population, social group or intergenerational population."},
+        "need_nature": {"description": "Material, reproductive, psychological, social or emergent spiritual regulation; categories may overlap."},
+        "biological_basis": {"description": "Candidate biological/social mechanism. It is a model field until independently sourced."},
+        "deprivation_response": {"description": "Candidate functional consequence of persistent deprivation; not a diagnosis or numerical effect."},
+        "cultural_variability": {"description": "How strongly observable satisfaction forms may vary across culture and institutions."}
+      }
+    },
+    "time_semantics": {
+      "type": "object",
+      "required": ["event_time", "available_time", "observation_time"],
+      "properties": {
+        "event_time": {"description": "When the model decision or real-world event occurred."},
+        "available_time": {"description": "Earliest time the row is available to the local model."},
+        "observation_time": {"description": "When a resource or population state was measured."}
+      }
+    },
+    "tables": {
+      "type": "object",
+      "required": [
+        "needs.csv", "satisfaction_functions.csv", "transformation_processes.csv",
+        "material_resources.csv", "need_function_edges.csv", "function_process_edges.csv",
+        "process_resource_dependencies.csv", "resource_endowment_observations.csv",
+        "process_carrier_mappings.csv"
+      ]
+    },
+    "status_rules": {
+      "type": "object",
+      "properties": {
+        "accepted_model_structure": {"description": "Accepted taxonomy structure, not a claim that every mechanism or deprivation effect is empirically verified."},
+        "candidate_needs_evidence": {"description": "Candidate dependency only; cannot be used as a verified fact."},
+        "not_yet_observed": {"description": "Missing quantity or accessibility is unknown, never zero."},
+        "carrier_mapping": {"description": "Individuals, groups, companies and securities can be observation or process carriers but cannot create root needs."}
+      }
+    }
+  }
+}

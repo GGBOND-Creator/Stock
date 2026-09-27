@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "ohlcv_minute_v1.schema.json",
+  "title": "Canonical Minute OHLCV Bar",
+  "description": "One intraday bar. Datetime is the local Asia/Shanghai bar-end timestamp; source units and adjustment are recorded in sidecar metadata.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["datetime", "open", "high", "low", "close", "volume", "amount"],
+  "properties": {
+    "datetime": { "type": "string", "format": "date-time" },
+    "open": { "type": "number", "exclusiveMinimum": 0 },
+    "high": { "type": "number", "exclusiveMinimum": 0 },
+    "low": { "type": "number", "exclusiveMinimum": 0 },
+    "close": { "type": "number", "exclusiveMinimum": 0 },
+    "volume": { "type": "number", "minimum": 0 },
+    "amount": { "type": "number", "minimum": 0 }
+  }
+}

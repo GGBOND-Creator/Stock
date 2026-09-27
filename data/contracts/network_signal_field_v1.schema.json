@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "network_signal_field_v1.schema.json",
+  "title": "Network Signal Field Contract v1",
+  "description": "Evidence-gated temporal signals for companies, listings, industries and other network objects. Display configuration is not a measured fact.",
+  "type": "object",
+  "required": ["schema_version", "time_semantics", "tables", "propagation"],
+  "properties": {
+    "schema_version": {"const": "network_signal_field_v1"},
+    "time_semantics": {
+      "type": "object",
+      "required": ["event_time", "available_time", "effective_time", "expires_time"],
+      "properties": {
+        "event_time": {"description": "When the signal-producing event occurred."},
+        "available_time": {"description": "Earliest time the local model could use the record."},
+        "effective_time": {"description": "When direct signal starts."},
+        "expires_time": {"description": "Optional exclusive end of signal visibility."}
+      }
+    },
+    "tables": {
+      "type": "object",
+      "required": ["signal_types.csv", "signal_events.csv", "signal_event_evidence.csv", "transmission_rules.csv", "signal_state_snapshot.csv"],
+      "properties": {
+        "signal_event_evidence.csv": {
+          "description": "Independent evidence with raw_numeric_value, raw_unit and raw_text kept separate from normalized display strength. Missing quantities remain null with an explicit not_reported unit."
+        }
+      }
+    },
+    "propagation": {
+      "type": "object",
+      "required": ["requires_explicit_edge", "requires_explicit_rule", "decay_method"],
+      "properties": {
+        "requires_explicit_edge": {"const": true},
+        "requires_explicit_rule": {"const": true},
+        "decay_method": {"const": "exponential_half_life_or_none"},
+        "cycle_policy": {"description": "Keep the maximum absolute path per event and object."}
+      }
+    }
+  }
+}

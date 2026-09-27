@@ -1,0 +1,3 @@
+﻿relation_id,source_company_id,target_company_id,relation_type,product_or_service,weight,weight_unit,valid_from,valid_to,available_time,source,evidence_kind,confidence
+RELATION_b805f042ec28bf6f384e,CNINFO_ORG_gssh0600104,CNINFO_ORG_gssh0600741,supplies,商品及材料,153169367.4,CNY,2025-01-01,2026-01-01,2026-08-18T07:28:24+00:00,CNINFO official annual report PDF,annual_report_named_related_party_transaction,high
+RELATION_11ad31a8540554dc27db,CNINFO_ORG_gssh0600741,CNINFO_ORG_gssh0600104,supplies,商品,5438818642.01,CNY,2025-01-01,2026-01-01,2026-08-18T07:28:24+00:00,CNINFO official annual report PDF,annual_report_named_related_party_transaction,high

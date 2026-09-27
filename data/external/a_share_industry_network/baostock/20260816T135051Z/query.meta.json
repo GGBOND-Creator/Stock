@@ -1,0 +1,8 @@
+{
+  "fetched_at_utc": "2026-08-16T13:48:42+00:00",
+  "source": "BaoStock query_stock_basic/query_stock_industry",
+  "basic_rows": 8901,
+  "industry_rows": 5540,
+  "availability_policy": "available_at_local_fetch_time",
+  "warning": "Historical dates are facts learned at fetched_at_utc unless a separate archival availability source is added."
+}

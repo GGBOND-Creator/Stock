@@ -1,0 +1,51 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "named_relation_corroboration_v1.schema.json",
+  "title": "Named Relation Corroboration v1",
+  "description": "Independent evidence that may corroborate entity identity or group linkage without upgrading transaction amount, direction, continuity, or economic significance.",
+  "type": "object",
+  "required": ["schema_version", "fields", "limits"],
+  "properties": {
+    "schema_version": { "const": "named_relation_corroboration_v1" },
+    "fields": {
+      "type": "array",
+      "items": { "type": "string" },
+      "const": [
+        "corroboration_id",
+        "evidence_id",
+        "relation_id",
+        "corroboration_kind",
+        "source_company_id",
+        "subject_company_id",
+        "subject_symbol",
+        "subject_legal_name",
+        "reported_control_label",
+        "reported_direct_ownership_share",
+        "source",
+        "source_record_id",
+        "source_url",
+        "source_announcement_time",
+        "source_available_time",
+        "evidence_pages",
+        "evidence_quote",
+        "reviewed_at",
+        "available_time",
+        "extraction_method",
+        "review_status",
+        "conclusion",
+        "confidence",
+        "source_status"
+      ]
+    },
+    "limits": {
+      "type": "array",
+      "items": { "type": "string" },
+      "const": [
+        "corroboration availability is not earlier than source availability or visual review",
+        "identity or control corroboration does not confirm transaction amount or direction",
+        "ownership or group status is not a production-flow edge",
+        "corroboration does not extend the relation beyond its original report period"
+      ]
+    }
+  }
+}

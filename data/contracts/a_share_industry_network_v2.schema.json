@@ -1,0 +1,50 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "a_share_industry_network_v2.schema.json",
+  "title": "A-share Industry Network Contract v2",
+  "description": "A temporal company, listing and production-evidence network. Product mappings remain review candidates and anonymous counterparties remain aggregate concentrations rather than company edges.",
+  "type": "object",
+  "required": ["schema_version", "tables", "time_semantics"],
+  "properties": {
+    "schema_version": { "const": "a_share_industry_network_v2" },
+    "time_semantics": {
+      "type": "object",
+      "properties": {
+        "event_time": { "description": "When an external event occurred." },
+        "announcement_time": { "description": "Official filing date or timestamp retained as source metadata." },
+        "available_time": { "description": "Earliest verified local model availability; all snapshots filter on this field." },
+        "effective_time": { "description": "When a lifecycle event changes network state." }
+      },
+      "required": ["event_time", "announcement_time", "available_time", "effective_time"]
+    },
+    "tables": {
+      "type": "object",
+      "required": [
+        "companies.csv",
+        "listings.csv",
+        "industries.csv",
+        "industry_memberships.csv",
+        "company_relations.csv",
+        "business_activities.csv",
+        "products.csv",
+        "activity_product_candidates.csv",
+        "counterparty_concentrations.csv",
+        "lifecycle_events.csv"
+      ],
+      "properties": {
+        "companies.csv": { "description": "Durable enterprise registry." },
+        "listings.csv": { "description": "Security listing spells linked to enterprises." },
+        "industries.csv": { "description": "Versioned industry classification nodes." },
+        "industry_memberships.csv": { "description": "Temporal company-to-industry classification edges." },
+        "company_relations.csv": { "description": "Evidence-backed supplier, customer, competitor and substitution edges between identified companies. Period transaction observations must not be continued beyond valid_to." },
+        "named_counterparty_relation_evidence.csv": { "description": "Optional sidecar governed by named_counterparty_relation_evidence_v1; preserves quotes, page numbers, identity evidence and separate availability times." },
+        "named_relation_corroborations.csv": { "description": "Optional sidecar governed by named_relation_corroboration_v1; corroborates identity or group linkage without upgrading transaction facts." },
+        "business_activities.csv": { "description": "Verbatim company business evidence." },
+        "products.csv": { "description": "Controlled product and service vocabulary; a node alone makes no company-activity claim." },
+        "activity_product_candidates.csv": { "description": "Verbatim-evidence mappings awaiting explicit human review." },
+        "counterparty_concentrations.csv": { "description": "Aggregate customer or supplier exposure when counterparties cannot be identified." },
+        "lifecycle_events.csv": { "description": "Listing, suspension, risk-warning, delisting and relisting events." }
+      }
+    }
+  }
+}

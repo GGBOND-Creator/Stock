@@ -1,0 +1,42 @@
+{
+  "schema_version": "network_signal_field_v1",
+  "created_at_utc": "2026-08-17T10:26:43+00:00",
+  "signal_types": [
+    "production.activity",
+    "supply.constraint",
+    "demand.change",
+    "capital.pressure",
+    "risk.warning",
+    "lifecycle.change"
+  ],
+  "known_limits": [
+    "production activity presence is confirmed, but production quantity is not reported",
+    "official A-share list presence confirms listing presence, not continuous trading availability",
+    "no signal propagates without both an explicit network edge and transmission rule",
+    "display colours and normalized strengths are encodings, not measured value"
+  ],
+  "signal_event_rows": 2,
+  "transmission_rule_rows": 0,
+  "last_import": {
+    "method": "fetch_time_lifecycle_status_observation",
+    "source_event_ids": [
+      "STATUS_3de54a4d161756b9047b"
+    ]
+  },
+  "signal_evidence_rows": 2,
+  "last_verification": {
+    "method": "official_szse_a_share_list_exact_match",
+    "signal_event_id": "SIGNAL_LIFECYCLE_01299fa3f5dcf534e7c5",
+    "source_record_id": "SZSE_A_SHARE_LIST_1110_2026-08-18_002714",
+    "archive": "data/external/a_share_industry_network/szse/20260818T063927Z/002714_a_share_list.json"
+  },
+  "last_production_import": {
+    "method": "approved_exact_text_product_mapping",
+    "source_mapping_ids": [
+      "ACTIVITY_PRODUCT_e68171883dc3330a1a29"
+    ],
+    "raw_numeric_value": null,
+    "raw_unit": "not_reported",
+    "display_strength": 1.0
+  }
+}

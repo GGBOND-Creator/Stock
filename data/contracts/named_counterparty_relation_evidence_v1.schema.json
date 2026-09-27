@@ -1,0 +1,88 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "named_counterparty_relation_evidence_v1.schema.json",
+  "title": "Named Counterparty Relation Evidence v1",
+  "description": "Reviewed annual-report evidence for period-bounded company relations. Source availability, independent identity availability, and relation-review availability are kept separate.",
+  "type": "object",
+  "required": ["schema_version", "time_semantics", "fields", "eligibility_rules"],
+  "properties": {
+    "schema_version": { "const": "named_counterparty_relation_evidence_v1" },
+    "time_semantics": {
+      "type": "object",
+      "required": [
+        "report_period_start",
+        "report_period_end",
+        "announcement_time",
+        "source_available_time",
+        "identity_available_time",
+        "reviewed_at",
+        "relation_available_time"
+      ],
+      "properties": {
+        "report_period_start": { "description": "First date covered by the disclosed transaction amount." },
+        "report_period_end": { "description": "Last date covered by the disclosed transaction amount." },
+        "announcement_time": { "description": "Official announcement timestamp of the transaction filing." },
+        "source_available_time": { "description": "Earliest verified local availability of the transaction filing." },
+        "identity_available_time": { "description": "Earliest verified local availability of the independent identity filing." },
+        "reviewed_at": { "description": "Time at which the page layout, quote, direction, amount, and identity were reviewed." },
+        "relation_available_time": { "description": "Earliest model availability of the reviewed relation; not earlier than source, identity, or review availability." }
+      }
+    },
+    "fields": {
+      "type": "array",
+      "items": { "type": "string" },
+      "const": [
+        "evidence_id",
+        "relation_id",
+        "reporting_company_id",
+        "reporting_symbol",
+        "reporting_legal_name",
+        "counterparty_company_id",
+        "counterparty_symbol",
+        "counterparty_legal_name",
+        "counterparty_name_in_filing",
+        "report_period_start",
+        "report_period_end",
+        "transaction_direction",
+        "relation_type",
+        "product_or_service",
+        "transaction_amount",
+        "currency",
+        "announcement_time",
+        "source_available_time",
+        "identity_announcement_time",
+        "identity_available_time",
+        "relation_available_time",
+        "source",
+        "source_record_id",
+        "source_url",
+        "evidence_page",
+        "evidence_quote",
+        "reporting_identity_evidence_page",
+        "reporting_identity_evidence_quote",
+        "identity_source",
+        "identity_source_record_id",
+        "identity_source_url",
+        "identity_evidence_page",
+        "identity_evidence_quote",
+        "extraction_method",
+        "review_status",
+        "reviewed_at",
+        "confidence",
+        "source_status"
+      ]
+    },
+    "eligibility_rules": {
+      "type": "array",
+      "items": { "type": "string" },
+      "const": [
+        "transaction quote contains the disclosed counterparty name and exact amount",
+        "independent identity quote contains the counterparty legal name and security code",
+        "both company identifiers already exist in the enterprise registry",
+        "page layout and column alignment are visually verified",
+        "relation_available_time is not earlier than source, identity, or review availability",
+        "relation valid_to is the day after report_period_end and does not imply continuation"
+      ]
+    }
+  }
+}

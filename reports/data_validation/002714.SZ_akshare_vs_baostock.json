@@ -1,0 +1,55 @@
+{
+  "generated_at": "2026-08-16T20:48:25+08:00",
+  "symbol": "002714.SZ",
+  "left": {
+    "label": "AkShare stock_zh_a_hist (Eastmoney)",
+    "adjustment": "qfq",
+    "volume_unit": "hand (100 shares; documented by AkShare)",
+    "path": "data/validation/002714.SZ/akshare/002714.SZ.csv",
+    "sha256": "ac9a2de403b078cc66e9d52cc3e0090ab02a104cf7a7cd02395b7cbdfdf840a7",
+    "rows": 634,
+    "first_date": "2024-01-02",
+    "last_date": "2026-08-14"
+  },
+  "right": {
+    "label": "BaoStock query_history_k_data_plus",
+    "adjustment": "adjustflag=2 (front adjusted)",
+    "volume_unit": "unknown",
+    "path": "data/validation/002714.SZ/baostock/002714.SZ.csv",
+    "sha256": "f6c5ef14599d56388541c35221433637e6961408479f05240f206607bc1fe451",
+    "rows": 634,
+    "first_date": "2024-01-02",
+    "last_date": "2026-08-14"
+  },
+  "date_comparison": {
+    "overlap_rows": 634,
+    "left_only_rows": 0,
+    "right_only_rows": 0
+  },
+  "price_comparison": {
+    "tolerance": 1e-08,
+    "all_ohlc_match_rows": 57,
+    "all_ohlc_match_fraction": 0.08990536277602523,
+    "last_mismatch_date": "2026-05-26",
+    "maximum_absolute_difference": {
+      "open": 0.5996899999999954,
+      "high": 0.5601270999999954,
+      "low": 0.6459481599999997,
+      "close": 0.586299480000001
+    }
+  },
+  "close_return_comparison": {
+    "correlation": 0.999593405780779,
+    "median_absolute_difference": 0.0002647243014930467,
+    "maximum_absolute_difference": 0.006381187261511823
+  },
+  "volume_comparison": {
+    "positive_volume_overlap_rows": 634,
+    "observed_right_over_left_ratio_median": 99.9999922499381,
+    "observed_right_over_left_ratio_min": 99.9995787404339,
+    "observed_right_over_left_ratio_max": 100.00035981577432,
+    "scaled_by_median_ratio_relative_diff_median": 6.731700684913943e-07,
+    "scaled_by_median_ratio_relative_diff_max": 4.135095362585202e-06
+  },
+  "interpretation_note": "The observed volume ratio is evidence of a unit-scale difference, not by itself proof of each provider's declared unit. Confirm provider documentation before assigning unit names."
+}

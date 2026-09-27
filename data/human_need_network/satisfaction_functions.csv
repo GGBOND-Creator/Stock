@@ -1,0 +1,4 @@
+function_id,parent_function_id,function_name,function_kind,description,event_time,available_time,evidence_kind,source_status,confidence,source,notes
+FUNC_NUTRIENT_SUPPLY,,营养供给,供给功能,"把基础营养需求转化为可获得的营养素组合。",2026-08-18T00:00:00+08:00,2026-08-18T00:00:00+08:00,model_definition,accepted_model_structure,structural_only,project_user_direction,
+FUNC_PROTEIN_SUPPLY,FUNC_NUTRIENT_SUPPLY,蛋白质供给,供给功能,"提供满足营养需求所需的蛋白质；不等同于某种商品销量。",2026-08-18T00:00:00+08:00,2026-08-18T00:00:00+08:00,model_definition,accepted_model_structure,structural_only,project_user_direction,
+FUNC_ANIMAL_PROTEIN,FUNC_PROTEIN_SUPPLY,动物蛋白供给,供给功能,"蛋白质供给的一种满足方式，仍需区分不同动物来源和加工过程。",2026-08-18T00:00:00+08:00,2026-08-18T00:00:00+08:00,model_definition,accepted_model_structure,structural_only,project_user_direction,

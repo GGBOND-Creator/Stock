@@ -1,0 +1,18 @@
+{
+  "method": "rendered_pages_reviewed_with_poppler_and_image_inspection",
+  "reporting_pages": [
+    4,
+    178,
+    179
+  ],
+  "identity_pages": [
+    1
+  ],
+  "checks": {
+    "table_headers_and_units_clear": true,
+    "purchase_counterparty_and_amount_column_aligned": true,
+    "sale_counterparty_and_amount_column_aligned": true,
+    "identity_cover_code_short_name_legal_name_aligned": true
+  },
+  "reviewed_at": "2026-08-18T07:28:24Z"
+}

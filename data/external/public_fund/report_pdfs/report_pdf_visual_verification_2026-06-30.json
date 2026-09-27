@@ -1,0 +1,71 @@
+{
+  "schema_version": "public_fund_report_pdf_visual_audit_v1",
+  "verified_at": "2026-08-17T11:35:32+08:00",
+  "report_period_end": "2026-06-30",
+  "method": "Poppler page rendering followed by manual visual inspection",
+  "scope": "Cover identity and the complete disclosed top-ten equity holdings table",
+  "summary_status": "passed",
+  "shared_checks": {
+    "cover_identity_legible": true,
+    "report_period_legible": true,
+    "manager_and_custodian_legible": true,
+    "holdings_table_not_clipped": true,
+    "security_code_legible": true,
+    "security_name_legible": true,
+    "share_quantity_legible": true,
+    "fair_value_legible": true,
+    "nav_ratio_legible": true
+  },
+  "records": [
+    {
+      "fund_code": "000001",
+      "source_pdf": "data/external/public_fund/report_pdfs/000001/2026-06-30/000001_2026-06-30_AN202607211827191531.pdf",
+      "cover_pages_checked": [1],
+      "holdings_pages_checked": [9],
+      "status": "passed"
+    },
+    {
+      "fund_code": "110022",
+      "source_pdf": "data/external/public_fund/report_pdfs/110022/2026-06-30/110022_2026-06-30_AN202607211827164035.pdf",
+      "cover_pages_checked": [1],
+      "holdings_pages_checked": [8, 9],
+      "status": "passed",
+      "note": "Page 8 contains the table header; all ten rows continue on page 9."
+    },
+    {
+      "fund_code": "005827",
+      "source_pdf": "data/external/public_fund/report_pdfs/005827/2026-06-30/005827_2026-06-30_AN202607211827164078.pdf",
+      "cover_pages_checked": [1],
+      "holdings_pages_checked": [10, 11],
+      "status": "passed",
+      "note": "Page 10 contains the table header; all ten rows continue on page 11."
+    },
+    {
+      "fund_code": "260108",
+      "source_pdf": "data/external/public_fund/report_pdfs/260108/2026-06-30/260108_2026-06-30_AN202607211827167449.pdf",
+      "cover_pages_checked": [1],
+      "holdings_pages_checked": [8, 9],
+      "status": "passed",
+      "note": "Rows 1-4 appear on page 8 and rows 5-10 continue on page 9."
+    },
+    {
+      "fund_code": "161725",
+      "source_pdf": "data/external/public_fund/report_pdfs/161725/2026-06-30/161725_2026-06-30_AN202607201827156014.pdf",
+      "cover_pages_checked": [1],
+      "holdings_pages_checked": [10],
+      "status": "passed"
+    },
+    {
+      "fund_code": "003096",
+      "source_pdf": "data/external/public_fund/report_pdfs/003096/2026-06-30/003096_2026-06-30_AN202607211827193222.pdf",
+      "cover_pages_checked": [1],
+      "holdings_pages_checked": [9],
+      "status": "passed"
+    }
+  ],
+  "known_limits": [
+    "The archived PDFs are from an Eastmoney mirror, not the fund managers' official hosts.",
+    "Visual inspection establishes legibility and absence of clipping; it does not independently recalculate every numeric cell.",
+    "Quarter-end holdings disclose a portfolio snapshot, not order identity, execution responsibility, or ultimate beneficial ownership."
+  ]
+}

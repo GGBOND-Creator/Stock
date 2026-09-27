@@ -1,0 +1,34 @@
+{
+  "schema_version": "named_relation_corroboration_v1",
+  "reviewed_at": "2026-08-18T07:55:10Z",
+  "as_of": "2026-08-18T07:55:10Z",
+  "source_pdf": "600104_1225071780_annual_report.pdf",
+  "source_pdf_sha256": "aca3b701a1d6c2d59c8063801c579c0b1a589fd7d183e13146e4790cce3d0874",
+  "corroboration_rows": 2,
+  "available_rows": 2,
+  "relation_rows_changed": 0,
+  "transaction_amount_or_direction_cross_confirmed": false,
+  "visual_audit": {
+    "pdf_pages": 205,
+    "evidence_pages": [
+      17,
+      170
+    ],
+    "page_17_checks": [
+      "下属控股子公司",
+      "华域汽车系统股份有限公司",
+      "股票代码：600741"
+    ],
+    "page_170_checks": [
+      "华域汽车系统股份有限公司",
+      "汽车零部件总成的设 计、生产和销售",
+      "58.32"
+    ],
+    "visual_checks": {
+      "page_17_legal_name_and_code_legible": true,
+      "page_17_control_label_legible": true,
+      "page_170_direct_ownership_column_aligned": true,
+      "page_170_ownership_share_legible": true
+    }
+  }
+}

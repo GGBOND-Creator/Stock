@@ -1,0 +1,77 @@
+{
+  "local_first_available_time_utc": "2026-08-17T02:18:21+00:00",
+  "announcement_time": "2026-03-28T00:00:00+08:00",
+  "announcement_id": "1225042507",
+  "announcement_title": "2025年年度报告",
+  "report_period": "2025-01-01/2025-12-31",
+  "detail_url": "http://www.cninfo.com.cn/new/disclosure/detail?stockCode=002714&announcementId=1225042507&orgId=9900022995&announcementTime=2026-03-28",
+  "pdf_url": "http://static.cninfo.com.cn/finalpage/2026-03-28/1225042507.PDF",
+  "pdf_filename": "002714_1225042507_annual_report.pdf",
+  "pdf_sha256": "aa44a1f4244a6efbc6e54e7dbd4307235d39117bb4ff4d9590f386b02b0d9a04",
+  "pdf_bytes": 5084266,
+  "availability_policy": "available_at_local_first_fetch_time; official announcement time retained separately",
+  "extraction_audit": {
+    "pdf_pages": 253,
+    "customer_evidence_page": 30,
+    "supplier_evidence_pages": [
+      30,
+      31
+    ],
+    "customer_ranked_rows": [
+      [
+        "第一名",
+        3505279652.96,
+        0.0243
+      ],
+      [
+        "第二名",
+        3135090941.4,
+        0.0217
+      ],
+      [
+        "第三名",
+        2047628889.38,
+        0.0142
+      ],
+      [
+        "第四名",
+        1784793423.52,
+        0.0124
+      ],
+      [
+        "第五名",
+        1465206852.93,
+        0.0102
+      ]
+    ],
+    "supplier_ranked_rows": [
+      [
+        "第一名",
+        5801904900.63,
+        0.0561
+      ],
+      [
+        "第二名",
+        4529029629.05,
+        0.0438
+      ],
+      [
+        "第三名",
+        3681057203.83,
+        0.0356
+      ],
+      [
+        "第四名",
+        3376966869.82,
+        0.0327
+      ],
+      [
+        "第五名",
+        2760990089.68,
+        0.0267
+      ]
+    ],
+    "counterparty_names_disclosed": false,
+    "company_relation_edges_created": 0
+  }
+}
