@@ -1,6 +1,13 @@
 # 股票走势模型项目：AI 接手说明书
 
-最后核对：2026-09-11（Asia/Shanghai）
+最后核对：2026-09-27（Asia/Shanghai）
+
+## 最新：2026-09-27 GitHub 接入
+
+- 项目对应公开仓库 `GGBOND-Creator/Stock`；本地 `C:\stock` 已初始化为 Git 仓库，主分支为 `main`，`origin` 使用 `https://github.com/GGBOND-Creator/Stock.git`（与用户提供的 SSH 地址指向同一仓库）。
+- GitHub 连接账号为 `GGBOND-Creator`，已核对其对该仓库有写权限。首次提交 `36a3acb` 已推送到远端 `main`，包含代码、文档和未被忽略的审计资料。
+- `.gitignore` 排除虚拟环境、临时目录和部分原始行情 CSV、处理结果、模型与报告。GitHub 仓库不是完整的本地数据备份；迁移时仍要另行复制整个项目目录并核对忽略文件。
+- 本次接入 GitHub 没有刷新行情、外部证据、模型结果或数据契约。旧数据日期继续以 `docs/DATA_STATUS.md` 和实际文件为准。
 
 ## 0. 2026-09-10 迁移前复核
 
@@ -10,7 +17,7 @@
 - 本地完整测试实际为 66 项，2026-09-11 复跑全部通过。
 - `data/realtime/a_share_spot.csv` 的快照时间仍是 `2026-07-20T10:45:28`，已经过期，不能称为 2026-09-11 的实时行情。
 - `source_observations.csv`、`controller_probability_distribution.csv` 和 `transmission_rules.csv` 仍分别为空、为空、0 条；需求—资源候选关系仍未升级为事实观察。
-- 当前 `.git` 目录没有可用的 Git 元数据；迁移不能只依靠克隆或聊天记录，必须复制整个项目目录。详细清单见 `docs/ACCOUNT_MIGRATION_BRIEF.md`。
+- 当时 `.git` 目录没有可用的 Git 元数据；2026-09-27 已初始化。迁移仍不能只依靠克隆或聊天记录，必须复制整个项目目录。详细清单见 `docs/ACCOUNT_MIGRATION_BRIEF.md`。
 
 ## 1. 给新 AI 的第一句话
 
@@ -212,7 +219,7 @@ date,open,high,low,close,volume
 
 ## 9. 迁移注意事项
 
-只复制聊天记录不够，必须复制整个项目文件夹。尤其注意 `.gitignore` 当前排除了部分原始数据、模型和报告；仅克隆代码仓库可能拿不到 `data/raw/*.csv`、`models/*.joblib` 和部分 `reports/` 结果。本次核对还发现当前 `.git` 目录没有可用 Git 元数据，因此更不能把克隆当作唯一迁移方式。迁移前应把项目完整复制到新电脑或另做本地压缩备份，并确认不包含账号密码、Cookie 或 API 密钥。快速迁移清单见 `docs/ACCOUNT_MIGRATION_BRIEF.md`。
+只复制聊天记录不够，必须复制整个项目文件夹。虽然 2026-09-27 已初始化 Git 并关联 GitHub，`.gitignore` 仍排除了部分原始数据、模型和报告；仅克隆代码仓库可能拿不到 `data/raw/*.csv`、`models/*.joblib` 和部分 `reports/` 结果。迁移前应把项目完整复制到新电脑或另做本地压缩备份，并确认不包含账号密码、Cookie 或 API 密钥。快速迁移清单见 `docs/ACCOUNT_MIGRATION_BRIEF.md`。
 
 新账号的第一条消息可写：
 

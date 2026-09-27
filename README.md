@@ -1,5 +1,7 @@
 # Stock Trend Lab
 
+GitHub 仓库：[GGBOND-Creator/Stock](https://github.com/GGBOND-Creator/Stock)。本地开发主分支为 `main`；GitHub 保存代码、文档和已提交的审计资料。`.gitignore` 排除的本地行情、模型与报告需另行备份。
+
 ## 从这里开始
 
 - 第一次使用或金融零基础：阅读 [人类使用说明书](docs/USER_GUIDE_CN.md)。
